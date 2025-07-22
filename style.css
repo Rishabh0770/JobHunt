@@ -1,0 +1,890 @@
+/* RESET STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* BASE PAGE STYLES */
+body {
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(135deg, #f4f6fa, #e7ecf5);
+  color: #333;
+  padding: 20px;
+}
+
+/* ===================== HEADER ===================== */
+header {
+  position: sticky; /* Sticks to top on scroll */
+  top: 0;
+  z-index: 999;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffffcc;
+  padding: 15px 30px;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+  margin-bottom: 30px;
+}
+
+/* Logo Text */
+.logo {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 26px;
+  color: #2d9cdb;
+}
+
+/* Search Input */
+input[type="text"] {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1;
+  max-width: 250px;
+  margin: 10px 20px;
+}
+
+/* Navigation Menu */
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+nav ul li,
+nav li {
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+nav ul li:hover,
+nav li:hover {
+  color: #2d9cdb;
+}
+
+/* Business Button - reuses same class */
+.button,
+.btn-business {
+  border: 2px solid #f9c100;
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 25px;
+  background: #fffbe6;
+  cursor: pointer;
+  font-weight: 600;
+  margin: 10px 15px;
+  transition: background 0.3s ease;
+}
+
+/* Hover style for buttons */
+.button:hover,
+.btn-business:hover {
+ background: #fff1a8;
+}
+
+/* Override Button (used again later) */
+.button {
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: #e67e22;
+}
+
+/* ===================== ICON NAVIGATION (Right Side) ===================== */
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: 15px;
+  position: relative;
+}
+
+/* All right-side nav icons */
+.nav-icons a {
+  color: #555;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-icons a:hover {
+  color: #2d9cdb;
+}
+
+/* Profile Image */
+.profile-img img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+/* Badge Styling */
+.nav-icons .badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  background-color: #ff3b3b;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* Specific positioning for notification/inbox */
+.nav-icons .icon:nth-child(1) .badge { right: -6px; } /* Notifications */
+.nav-icons .icon:nth-child(2) .badge { right: -6px; } /* Inbox */
+
+/* Hide badge if empty */
+.badge:empty {
+  display: none;
+}
+
+/* ===================== HERO SECTION ===================== */
+.hero {
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #636e72;
+}
+
+/* ===================== OPPORTUNITIES SECTION ===================== */
+.opportunities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Prevent underlining of cards */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Each Opportunity Card */
+.card {
+  padding: 20px;
+  border-radius: 15px;
+  color: #fff;
+  min-height: 120px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Glassmorphism Style */
+.glass {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* Gradient Themes */
+.green  { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.orange { background: linear-gradient(135deg, #e67e22, #d35400); }
+.blue   { background: linear-gradient(135deg, #3498db, #2980b9); }
+.purple { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+.yellow { background: linear-gradient(135deg, #f1c40f, #f39c12); }
+.pink   { background: linear-gradient(135deg, #ff6b81, #e84393); }
+
+/* Modern Hover with Glow + Animation */
+.opportunities .card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.opportunities .card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Light radial gradient overlay */
+.opportunities .card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  transform: rotate(25deg);
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.opportunities .card:hover::before {
+  opacity: 1;
+}
+
+/* Glow Color per Theme on Hover */
+.card.green:hover { box-shadow: 0 10px 30px rgba(46, 204, 113, 0.4); }
+.card.orange:hover { box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4); }
+.card.blue:hover { box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4); }
+.card.purple:hover { box-shadow: 0 10px 30px rgba(155, 89, 182, 0.4); }
+.card.yellow:hover { box-shadow: 0 10px 30px rgba(241, 196, 15, 0.4); }
+.card.pink:hover { box-shadow: 0 10px 30px rgba(255, 99, 132, 0.4); }
+
+/* ===================== ACTIVITY SECTION ===================== */
+.activity-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.activity-buttons button {
+  margin: 10px;
+  padding: 12px 20px;
+  font-weight: 600;
+  border: none;
+  background-color: #2d9cdb;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.activity-buttons button:hover {
+  background-color: #1c7bbf;
+}
+
+/* ===================== SCROLL REVEAL ===================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================== TECH SLIDER ===================== */
+.tech-slider {
+  padding: 3rem 1rem;
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.tech-slider h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.slider-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+  align-items: center;
+}
+
+.slide {
+  width: 250px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide img {
+  height: 60px;
+  width: auto;
+  filter: grayscale(0.4);
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.slide:hover img {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+/* Slider Scroll Animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Responsive Slider */
+@media (max-width: 768px) {
+  .slide {
+    width: 150px;
+  }
+
+  .slider-track {
+    width: calc(150px * 14);
+  }
+}
+
+/* ===================== FOOTER ===================== */
+.site-footer {
+  margin-top: 60px;
+  padding: 40px 20px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  color: #2d3436;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand h2 {
+  color: #2d9cdb;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  max-width: 300px;
+  color: #555;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+/* Footer Columns */
+.footer-links {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2d9cdb;
+}
+
+/* Footer Lists */
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #444;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #2d9cdb;
+}
+
+/* Social Media */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a img {
+  height: 24px;
+  width: 24px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: grayscale(0%) drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+  transform: scale(1.1);
+}
+
+/* Bottom Text */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 14px;
+  color: #777;
+  margin-top: 20px;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .footer-brand,
+  .footer-social {
+    width: 100%;
+  }
+}
+
+
+/* === Profile Slide Panel === */
+.profile-slide-panel {
+  position: fixed;
+  top: 0;
+  right: -30%;
+  width: 30%;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+  z-index: 1001;
+  transition: right 0.4s ease;
+  overflow-y: auto;
+}
+
+.profile-slide-panel.active {
+  right: 0;
+}
+
+/* === Overlay (blur background left 70%) === */
+.profile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.profile-overlay.active {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* === Profile Panel Content === */
+.profile-panel-content {
+  padding: 30px 20px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.sidebar-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar-user-info h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.sidebar-user-info p {
+  margin: 2px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.view-profile {
+  font-size: 0.85rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.sidebar-section h5 {
+  margin: 20px 0 10px;
+  font-size: 1rem;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  padding: 10px 0;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.sidebar-links i {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.logout-btn {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+/* === Profile Panel Styling (Desktop) === */
+.profile-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 30%;
+  background-color: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+}
+
+.profile-panel.active {
+  right: 0;
+}
+
+/* Dimmed Overlay (70%) */
+.profile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25); /* ⬅️ Increased from 0.1 to 0.25 */
+  backdrop-filter: blur(8px);           /* ⬅️ Increased blur */
+  -webkit-backdrop-filter: blur(8px);   /* For Safari */
+  z-index: 9998;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.profile-overlay.active {
+  display: block;
+}
+
+/* === Header inside panel === */
+.profile-panel .sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar-header h2 {
+  flex-grow: 1;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.close-profile {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+}
+
+/* === Content Layout === */
+.sidebar-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 16px;
+}
+
+.sidebar-user-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.sidebar-user-info p {
+  margin: 4px 0;
+  color: #777;
+}
+
+/* Sidebar Links */
+.sidebar-links {
+  list-style: none;
+  padding: 0 16px;
+}
+
+.sidebar-links li {
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.logout-btn {
+  margin: 20px 16px;
+  padding: 10px;
+  width: calc(100% - 32px);
+  background-color: #ff5252;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* === MOBILE RESPONSIVENESS === */
+@media (max-width: 768px) {
+  .profile-panel {
+    width: 100%;
+    right: -100%;
+  }
+
+  .profile-panel.active {
+    right: 0;
+  }
+
+  .profile-overlay {
+    display: none; /* hide dimming on mobile */
+  }
+}
+
+/* Notification Sidebar */
+.notification-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 30%;
+  height: 100%;
+  background-color: #fefefe;
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: right 0.4s ease;
+}
+.notification-sidebar.open {
+  right: 0;
+}
+.notification-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.notification-body {
+  padding: 1rem;
+}
+.notification-item {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.notification-item i {
+  color: #ff9800;
+}
+
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25); /* ⬅️ Increased from 0.1 to 0.25 */
+  backdrop-filter: blur(8px);           /* ⬅️ Increased blur */
+  -webkit-backdrop-filter: blur(8px);   /* For Safari */
+  z-index: 9998;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.notification-sidebar.open ~ .notification-overlay {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* === Messaging Sidebar Panel === */
+.messages-sidebar {
+  position: fixed;
+  top: 15%;
+  right: -100%;
+  width: 30%;
+  height: 90%;
+  background: #fff;
+  border-left: 1px solid #ddd;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  transition: right 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+
+/* Overlay */
+.messages-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* covers the entire screen */
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1); /* subtle dim effect */
+  backdrop-filter: blur(6px); /* ✅ this creates the blur */
+  -webkit-backdrop-filter: blur(6px); /* Safari support */
+  z-index: 9998;
+  display: none;
+}
+
+/* Show class */
+.messages-sidebar.show {
+  right: 0;
+}
+.messages-overlay.show {
+  display: block;
+}
+
+/* Header */
+.messages-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+.messages-header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.close-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Search Bar */
+.messages-search input {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Message List */
+.messages-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+.message-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+.message-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.message-info {
+  display: flex;
+  flex-direction: column;
+}
+.timestamp {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+
+
+.message-content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: #007bff;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  padding: 5px 0;
+  font-size: 1rem;
+}
+
+.sender-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.message-text {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}

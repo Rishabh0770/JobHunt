@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobHunt - Unlock Your Career</title>
+
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts for typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Swiper slider styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- ========== HEADER / NAVIGATION ========== -->
+  <header class="navbar">
+    <a href="index.html" class="logo">JobHunt</a>
+
+    <!-- Search bar in navbar -->
+    <input type="text" placeholder="Search Opportunities..." class="search-input" />
+
+    <!-- Navigation links -->
+   <nav>
+  <ul class="nav-links">
+    <li><a href="internship.html">Internships</a></li>
+    <li><a href="jobs.html">Jobs</a></li>
+    <li><a href="competitions.html">Competitions</a></li>
+    <li><a href="mentorships.html">Mentorships</a></li>
+    <li><a href="practice.html">Practice</a></li>
+    <li><a href="more.html">More</a></li>
+  </ul>
+</nav>
+
+
+    <!-- CTA for Business users -->
+    <div class="btn-business">For Business</div>
+
+    <!-- Right navbar icons: Notification, Inbox, Profile -->
+    <div class="nav-icons">
+      <a href="#" class="icon" title="Notifications" onclick="openNotification()">
+  <i class="fas fa-bell"></i>
+  <span class="badge">3</span>
+</a>
+
+<!-- Messages Icon in Navbar -->
+<a href="#" class="icon" title="Messages" onclick="openMessages()">
+  <i class="fas fa-envelope"></i>
+  <span class="badge">2</span>
+</a>
+
+      <!-- Profile icon to toggle profile panel -->
+      <a href="#" id="profileToggle" class="profile-img" title="Profile">
+  <img src="img/profile.png" alt="Profile" />
+</a>
+    </div>
+    
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h1 class="reveal">Unlock Your Career</h1>
+      <p class="reveal">Explore opportunities from across the globe to grow, showcase skills, gain CV points & get hired by your dream company.</p>
+    </section>
+
+    <!-- OPPORTUNITIES SECTION -->
+    <section class="opportunities">
+      <!-- Cards linking to various sections -->
+      <a href="internship.html" class="card glass green reveal">
+        <h2>Internships</h2>
+        <p>Gain Practical Experience</p>
+      </a>
+      <a href="mentorships.html" class="card glass orange reveal">
+        <h2>Mentorships</h2>
+        <p>Guidance From Top Mentors</p>
+      </a>
+      <a href="jobs.html" class="card glass blue reveal">
+        <h2>Jobs</h2>
+        <p>Explore Diverse Careers</p>
+      </a>
+      <a href="practice.html" class="card glass purple reveal">
+        <h2>Practice</h2>
+        <p>Refine Skills Daily</p>
+      </a>
+      <a href="competitions.html" class="card glass yellow reveal">
+        <h2>Competitions</h2>
+        <p>Battle For Excellence</p>
+      </a>
+      <a href="more.html" class="card glass pink reveal">
+        <h2>More</h2>
+        <p>Discover all new paths</p>
+      </a>
+    </section>
+
+    <!-- MY ACTIVITY SECTION -->
+    <section class="activity-section">
+      <h2 class="reveal">My Activity</h2>
+      <div class="activity-buttons reveal">
+        <!-- Activity Filters -->
+        <button>Registrations</button>
+        <button>Watchlist</button>
+        <button>Recently Viewed</button>
+        <button>My Rounds</button>
+      </div>
+    </section>
+
+    <!-- COMPANY LOGO SLIDER SECTION -->
+    <section class="tech-slider reveal">
+      <h2>Industry Veterans – Trust Us</h2>
+      <div class="slider-track">
+        <!-- Logos of trusted companies -->
+        <div class="slide" title="Infosys"><img src="img/Infosys.svg" alt="Infosys Logo" loading="lazy" /></div>
+        <div class="slide" title="Wipro"><img src="img/Wipro.png" alt="Wipro Logo" loading="lazy" /></div>
+        <div class="slide" title="Google"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" loading="lazy" /></div>
+        <div class="slide" title="Amazon"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" loading="lazy" /></div>
+        <div class="slide" title="Microsoft"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" loading="lazy" /></div>
+        <div class="slide" title="IBM"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM Logo" loading="lazy" /></div>
+        <div class="slide" title="Accenture"><img src="img/accenture.svg" alt="Accenture Logo" loading="lazy" /></div>
+        <div class="slide" title="Capgemini"><img src="img/Capgemini.png" alt="Capgemini Logo" loading="lazy" /></div>
+        <div class="slide" title="Cognizant"><img src="img/Cognizant.png" alt="Cognizant Logo" loading="lazy" /></div>
+        <div class="slide" title="Flipkart"><img src="img/Flipkart.png" alt="Flipkart Logo" loading="lazy" /></div>
+        <div class="slide" title="Walmart"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Walmart_logo.svg" alt="Walmart Logo" loading="lazy" /></div>
+
+        <!-- Repeat logos for infinite loop effect -->
+        <div class="slide" title="Amazon"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" loading="lazy" /></div>
+        <div class="slide" title="Microsoft"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" loading="lazy" /></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer reveal">
+    <div class="footer-container">
+
+      <!-- Footer Brand Section -->
+      <div class="footer-brand">
+        <h2>JobHunt</h2>
+        <p>Unlocking career potential for every dreamer out there.</p>
+      </div>
+
+      <!-- Footer Navigation Links -->
+      <div class="footer-links">
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="internship.html">Internships</a></li>
+            <li><a href="#">Jobs</a></li>
+            <li><a href="#">Competitions</a></li>
+            <li><a href="#">Practice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Social Media Icons -->
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="img/linkedin.png" alt="LinkedIn"></a>
+          <a href="#"><img src="img/X.png" alt="Twitter/X Icon"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>© 2025 JobHunt. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+<!-- Notification Sidebar -->
+<div id="notificationSidebar" class="notification-sidebar">
+  <div class="notification-header">
+    <h2>Notifications</h2>
+    <span class="close-btn" onclick="closeNotification()">&times;</span>
+  </div>
+  <hr>
+  <div class="notification-body">
+    <a href="#" class="select-link">Select</a>
+    <div class="notification-item">
+      <i class="fas fa-bell"></i>
+      <div>
+        <p>You have earned badges for Daily Visit</p>
+        <small>21 Jul 25, 08:42 AM IST</small>
+      </div>
+    </div>
+    <div class="notification-item">
+      <i class="fas fa-bell"></i>
+      <div>
+        <p>You have earned badges for Opportunity Registration</p>
+        <small>20 Jul 25, 11:50 PM IST</small>
+      </div>
+    </div>
+    <div class="notification-item">
+      <i class="fas fa-bell"></i>
+      <div>
+        <p>You have earned badges for User Sign-Up</p>
+        <small>03 Jul 25, 09:21 AM IST</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="notification-overlay" id="notificationOverlay"></div>
+
+
+<div id="messagesSidebar" class="messages-sidebar">
+
+
+  <div class="messages-header">
+    <h3>Messages</h3>
+    <span class="close-btn" onclick="closeMessages()">&times;</span>
+  </div>
+
+  <!-- Messages List -->
+  <div id="messagesList" class="messages-list">
+    <div class="message-item" onclick="openMessage(this)">
+      <img src="https://unstop.com/images/logo.png" alt="Sender" />
+      <div class="message-info">
+        <strong>Unstop</strong>
+        <span class="timestamp">1 day ago</span>
+      </div>
+    </div>
+    <!-- Add more .message-item if needed -->
+  </div>
+
+  <!-- Single Message View -->
+  <div id="messageContent" class="message-content" style="display: none;">
+    <button onclick="goBackToList()" class="back-btn">← Back</button>
+    <h4 class="sender-name">Unstop</h4>
+    <p class="message-text">Hey Rishav! Thanks for applying. We'll get back to you shortly. Stay tuned 🚀</p>
+  </div>
+</div>
+<div id="messagesOverlay" class="messages-overlay" onclick="closeMessages()"></div>
+
+
+
+
+
+
+  <!-- ===== Profile Slide Panel (Right 30%) ===== -->
+<div class="profile-slide-panel" id="profilePanel">
+  <div class="profile-panel-content">
+
+    <!-- Top Bar -->
+    <div class="panel-top-bar">
+      <h3>👤 Profile</h3>
+    </div>
+
+    <hr />
+
+    <!-- Profile Info -->
+    <div class="sidebar-header">
+      <img src="img/profile.png" class="sidebar-avatar" alt="User Profile" />
+      <div class="sidebar-user-info">
+        <h4>Rishav Sharma</h4>
+        <p>rishav123@gmail.com</p>
+        <a href="#" class="view-profile">View Profile →</a>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar-section">
+      <h5>For Users</h5>
+      <ul class="sidebar-links">
+        <li><i class="fas fa-file-alt"></i> Registration / Applications</li>
+        <li><i class="fas fa-briefcase"></i> My Jobs</li>
+        <li><i class="fas fa-rocket"></i> My Opportunities</li>
+        <li><i class="fas fa-campground"></i> My Festivals</li>
+        <li><i class="fas fa-user-friends"></i> Referrals</li>
+        <li><i class="fas fa-eye"></i> Watchlist</li>
+        <li><i class="fas fa-bookmark"></i> Bookmarked</li>
+        <li><i class="fas fa-history"></i> Recently Viewed Courses</li>
+        <li><i class="fas fa-certificate"></i> Certificates</li>
+        <li><i class="fas fa-cog"></i> Settings</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <!-- Logout -->
+    <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+  </div>
+</div>
+
+<!-- Profile Overlay (click to close) -->
+<div class="profile-overlay" id="profileOverlay"></div>
+
+
+  <!-- External JavaScript files -->
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+</body>
+</html>

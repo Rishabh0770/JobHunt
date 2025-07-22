@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic Page Setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobHunt - Unlock Your Career</title>
+
+  <!-- Main CSS Files -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="internship.css" />
+
+  <!-- Google Fonts for typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Swiper slider styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- ========== HEADER / NAVIGATION ========== -->
+  <header class="navbar">
+    <!-- Website Logo -->
+    <a href="index.html" class="logo">JobHunt</a>
+
+    <!-- Search bar -->
+    <input type="text" placeholder="Search Opportunities..." class="search-input" />
+
+    <!-- Navigation Links -->
+    <nav>
+      <ul class="nav-links">
+        <li><a href="internship.html">Internships</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Competitions</a></li>
+        <li><a href="#">Mentorships</a></li>
+        <li><a href="#">Practice</a></li>
+        <li><a href="#">More</a></li>
+      </ul>
+    </nav>
+
+    <!-- CTA for Business Users -->
+    <div class="btn-business">For Business</div>
+
+    <!-- Right Side Icons -->
+    <div class="nav-icons">
+      <!-- Notifications Icon -->
+      <a href="#" class="icon" title="Notifications" onclick="openNotification()">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </a>
+
+      <!-- Messages Icon -->
+      <a href="#" class="icon" title="Messages" onclick="openMessages()">
+        <i class="fas fa-envelope"></i>
+        <span class="badge">2</span>
+      </a>
+
+      <!-- Profile Icon -->
+      <a href="#" id="profileToggle" class="profile-img" title="Profile">
+        <img src="img/profile.png" alt="Profile" />
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+
+    <!-- ==== INTERNSHIP HERO SECTION ==== -->
+    <section class="internship-main container">
+      <div class="internship-content">
+        <!-- Left Text Section -->
+        <div class="text-side">
+          <h1>
+            <span style="color: #2d9cdb;">JobHunt </span>
+            <span style="color: #f9c100;">Exposure</span>
+          </h1>
+          <p>Explore curated internships that build your skills and boost your career potential.</p>
+
+          <!-- CTA Buttons -->
+          <div class="button-group">
+            <button class="btn find-internships">Find Internships</button>
+            <button class="btn post-internships">+ Post Internship</button>
+          </div>
+
+          <!-- Categories Icons -->
+          <div class="categories">
+            <div class="category"><img src="img/code.png" alt="Web" class="icon" /> Web Dev</div>
+            <div class="category"><img src="img/android.png" alt="Android" class="icon" /> Android</div>
+            <div class="category"><img src="img/ai.png" alt="ML" class="icon" /> ML/AI</div>
+            <div class="category"><img src="img/marketing.png" alt="Marketing" class="icon" /> Marketing</div>
+            <div class="category"><img src="img/ux-design.png" alt="Design" class="icon" /> UI/UX</div>
+          </div>
+        </div>
+
+        <!-- Right Image Section -->
+        <div class="image-side">
+          <img src="img/internship-image.webp" alt="Internship Illustration" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==== RECOMMENDED INTERNSHIPS SECTION ==== -->
+    <section class="internship-section">
+      <div class="section-header">
+        <h2>Recommended Internships <span>FOR YOU</span></h2>
+        <p>Top-rated internships from the learners' community.</p>
+      </div>
+
+      <!-- Internship Cards -->
+      <div class="internship-grid">
+        <!-- Card 1 -->
+        <div class="internship-card">
+          <div class="badge-group">
+            <span class="badge">In Office</span>
+            <span class="badge hiring">⚡ Actively Hiring</span>
+          </div>
+          <div class="card-header">
+            <img src="img/tata.png" alt="Neuramach Logo">
+            <div>
+              <h3>AI Intern</h3>
+              <p>Neuramach.AI • Remote</p>
+            </div>
+          </div>
+          <div class="card-info">
+            <span>💰 ₹10K/month</span>
+            <span>⏳ 3 Months</span>
+            <span>✅ 456 Applied</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="internship-card">
+          <span class="badge">WFH</span>
+          <span class="badge hiring">⚡ Actively Hiring</span>
+          <div class="card-header">
+            <img src="img/logo1.png" alt="TATA Cliq Logo">
+            <div>
+              <h3>UI/UX Intern</h3>
+              <p>TATA Cliq • Mumbai</p>
+            </div>
+          </div>
+          <div class="card-info">
+            <span>💰 ₹8K/month</span>
+            <span>🏢 Onsite</span>
+            <span>✅ 220 Applied</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="internship-card">
+          <div class="badge-group">
+            <span class="badge">In Office</span>
+            <span class="badge hiring">⚡ Actively Hiring</span>
+          </div>
+          <div class="card-header">
+            <img src="img/coding.png" alt="Coding Zone">
+            <div>
+              <h3>Android Intern</h3>
+              <p>CodingZone • Mohali</p>
+            </div>
+          </div>
+          <div class="card-info">
+            <span>💰 ₹7K/month</span>
+            <span>🧠 Java / XML</span>
+            <span>✅ 135 Applied</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==== INTERNSHIP JOB LISTINGS SECTION ==== -->
+    <hr>
+    <section class="internship-section">
+      <div class="section1-header">
+        <h2>Internships</h2>
+        <div class="sub-header-row">
+          <div class="sub-header-left">
+            <p>Find the Internships that fit your career aspirations.</p>
+            <a href="#" class="view-all-link">View all</a>
+          </div>
+        </div>
+
+        <!-- Job Cards -->
+        <div class="internship-grid">
+
+          <!-- Card: Accenture -->
+          <div class="job-card" onclick="window.location.href='https://example.com/job-details'">
+            <div class="job-cover">
+              <div class="job-logo">
+                <img src="img/accenture.svg" alt="Accenture Logo">
+              </div>
+            </div>
+            <div class="job-content">
+              <div class="badges">
+                <div class="badge wfh">WFH</div>
+                <div class="badge hiring"><i class="fas fa-bolt"></i> Actively Hiring</div>
+              </div>
+              <div class="job-title">Full Stack Developer</div>
+              <div class="company-name">Accenture</div>
+              <div><i class="fas fa-indian-rupee-sign"></i> 3 LPA - 5 LPA</div>
+              <div class="stats">
+                <div><i class="fas fa-users"></i> 2163 Applied</div>
+              </div>
+            </div>
+            <div class="apply-arrow">
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </div>
+          </div>
+
+          <!-- Card: Infosys -->
+          <div class="job-card" onclick="window.location.href='https://example.com/job-details'">
+            <div class="job-cover" style="background: linear-gradient(to right, #d7e859, #c5fb03);">
+              <div class="job-logo">
+                <img src="img/Infosys.svg" alt="Infosys Logo">
+              </div>
+            </div>
+            <div class="job-content">
+              <div class="badges">
+                <div class="badge wfh">Office</div>
+                <div class="badge hiring"><i class="fas fa-bolt"></i> Actively Hiring</div>
+              </div>
+              <div class="job-title">Front-end Developer</div>
+              <div class="company-name">Infosys</div>
+              <div><i class="fas fa-indian-rupee-sign"></i> 6 LPA - 8 LPA</div>
+              <div class="stats">
+                <div><i class="fas fa-users"></i> 1184 Applied</div>
+              </div>
+            </div>
+            <div class="apply-arrow">
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </div>
+          </div>
+
+          <!-- Card: Wipro -->
+          <div class="job-card" onclick="window.location.href='https://example.com/job-details'">
+            <div class="job-cover" style="background: linear-gradient(to right, #e95757, #de4a4a);">
+              <div class="job-logo">
+                <img src="img/Wipro.png" alt="Wipro Logo">
+              </div>
+            </div>
+            <div class="job-content">
+              <div class="badges">
+                <div class="badge wfh">Onsite</div>
+                <div class="badge hiring"><i class="fas fa-bolt"></i> Actively Hiring</div>
+              </div>
+              <div class="job-title">Backend Developer</div>
+              <div class="company-name">Wipro</div>
+              <div><i class="fas fa-indian-rupee-sign"></i> 5 LPA - 6 LPA</div>
+              <div class="stats">
+                <div><i class="fas fa-users"></i> 2467 Applied</div>
+              </div>
+            </div>
+            <div class="apply-arrow">
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </div>
+          </div>
+
+          <!-- Card: Deloitte -->
+          <div class="job-card" onclick="window.location.href='https://example.com/job-details'">
+            <div class="job-cover" style="background: linear-gradient(to right, #6fed7c, #25f10f);">
+              <div class="job-logo">
+                <img src="img/deloitte.png" alt="Deloitte Logo">
+              </div>
+            </div>
+            <div class="job-content">
+              <div class="badges">
+                <div class="badge wfh">Remote</div>
+                <div class="badge hiring"><i class="fas fa-bolt"></i> Actively Hiring</div>
+              </div>
+              <div class="job-title">UI/UX Designer</div>
+              <div class="company-name">Deloitte</div>
+              <div><i class="fas fa-indian-rupee-sign"></i> 7 LPA - 9 LPA</div>
+              <div class="stats">
+                <div><i class="fas fa-users"></i> 1869 Applied</div>
+              </div>
+            </div>
+            <div class="apply-arrow">
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+<footer class="site-footer reveal">
+  <div class="footer-container">
+
+    <!-- 🔹 Footer Brand Section: Brand name and tagline -->
+    <div class="footer-brand">
+      <h2>JobHunt</h2>
+      <p>Unlocking career potential for every dreamer out there.</p>
+    </div>
+
+    <!-- 🔹 Footer Navigation Links: Two columns of useful links -->
+    <div class="footer-links">
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#">Internships</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Competitions</a></li>
+          <li><a href="#">Practice</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 🔹 Social Media Icons: Facebook, Instagram, LinkedIn, X (Twitter) -->
+    <div class="footer-social">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="img/linkedin.png" alt="LinkedIn"></a>
+        <a href="#"><img src="img/X.png" alt="Twitter/X Icon"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Footer Bottom Bar: Copyright notice -->
+  <div class="footer-bottom">
+    <p>© 2025 JobHunt. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ========== NOTIFICATION SIDEBAR ========== -->
+<div id="notificationSidebar" class="notification-sidebar">
+  <div class="notification-header">
+    <h2>Notifications</h2>
+    <span class="close-btn" onclick="closeNotification()">&times;</span>
+  </div>
+
+  <hr>
+
+  <!-- 🔹 Notification List Items -->
+  <div class="notification-body">
+    <a href="#" class="select-link">Select</a>
+    <div class="notification-item">
+      <i class="fas fa-bell"></i>
+      <div>
+        <p>You have earned badges for Daily Visit</p>
+        <small>21 Jul 25, 08:42 AM IST</small>
+      </div>
+    </div>
+    <div class="notification-item">
+      <i class="fas fa-bell"></i>
+      <div>
+        <p>You have earned badges for Opportunity Registration</p>
+        <small>20 Jul 25, 11:50 PM IST</small>
+      </div>
+    </div>
+    <div class="notification-item">
+      <i class="fas fa-bell"></i>
+      <div>
+        <p>You have earned badges for User Sign-Up</p>
+        <small>03 Jul 25, 09:21 AM IST</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🔹 Notification Overlay (used to dim background) -->
+<div class="notification-overlay" id="notificationOverlay"></div>
+
+<!-- ========== MESSAGES SIDEBAR ========== -->
+<div id="messagesSidebar" class="messages-sidebar">
+
+  <!-- 🔹 Header for Messages Panel -->
+  <div class="messages-header">
+    <h3>Messages</h3>
+    <span class="close-btn" onclick="closeMessages()">&times;</span>
+  </div>
+
+  <!-- 🔹 List of Messages -->
+  <div id="messagesList" class="messages-list">
+    <div class="message-item" onclick="openMessage(this)">
+      <img src="img/code.png" alt="Sender" />
+      <div class="message-info">
+        <strong>JobHunt</strong>
+        <span class="timestamp">1 day ago</span>
+      </div>
+    </div>
+    <!-- Add more .message-item if needed -->
+  </div>
+
+  <!-- 🔹 Single Message Detail View -->
+  <div id="messageContent" class="message-content" style="display: none;">
+    <button onclick="goBackToList()" class="back-btn">← Back</button>
+    <h4 class="sender-name">Unstop</h4>
+    <p class="message-text">Hey Rishav! Thanks for applying. We'll get back to you shortly. Stay tuned 🚀</p>
+  </div>
+</div>
+
+<!-- 🔹 Overlay behind Messages Panel -->
+<div id="messagesOverlay" class="messages-overlay" onclick="closeMessages()"></div>
+
+<!-- ========== PROFILE SLIDE PANEL ========== -->
+<div class="profile-slide-panel" id="profilePanel">
+  <div class="profile-panel-content">
+
+    <!-- 🔹 Top bar of the profile panel -->
+    <div class="panel-top-bar">
+      <h3>👤 Profile</h3>
+    </div>
+
+    <hr />
+
+    <!-- 🔹 Profile Info Section -->
+    <div class="sidebar-header">
+      <img src="img/profile.png" class="sidebar-avatar" alt="User Profile" />
+      <div class="sidebar-user-info">
+        <h4>Rishav Sharma</h4>
+        <p>rishav123@gmail.com</p>
+        <a href="#" class="view-profile">View Profile →</a>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 🔹 Sidebar Navigation Links for Users -->
+    <div class="sidebar-section">
+      <h5>For Users</h5>
+      <ul class="sidebar-links">
+        <li><i class="fas fa-file-alt"></i> Registration / Applications</li>
+        <li><i class="fas fa-briefcase"></i> My Jobs</li>
+        <li><i class="fas fa-rocket"></i> My Opportunities</li>
+        <li><i class="fas fa-campground"></i> My Festivals</li>
+        <li><i class="fas fa-user-friends"></i> Referrals</li>
+        <li><i class="fas fa-eye"></i> Watchlist</li>
+        <li><i class="fas fa-bookmark"></i> Bookmarked</li>
+        <li><i class="fas fa-history"></i> Recently Viewed Courses</li>
+        <li><i class="fas fa-certificate"></i> Certificates</li>
+        <li><i class="fas fa-cog"></i> Settings</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <!-- 🔹 Logout Button -->
+    <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+  </div>
+</div>
+
+<!-- 🔹 Profile Background Overlay -->
+<div class="profile-overlay" id="profileOverlay"></div>
+
+<!-- ========== SCRIPTS (JS) ========== -->
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+</body>
+</html>
