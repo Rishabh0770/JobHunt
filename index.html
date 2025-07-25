@@ -18,26 +18,24 @@
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
 </head>
 
 <body>
 
   <!-- ========== HEADER / NAVIGATION ========== -->
- <header class="navbar">
+<header class="navbar">
   <a href="index.html" class="logo">JobHunt</a>
 
-  <!-- Search bar -->
   <input type="text" placeholder="Search Opportunities..." class="search-input" />
 
-  <!-- Hamburger Menu (Mobile Only) -->
+  <!-- ✅ Hamburger Icon -->
   <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+    <i class="fas fa-bars"></i>
   </div>
 
-  <!-- Navigation Links -->
-  <nav>
+  <!-- ✅ Mobile Navigation Menu -->
+  <nav id="navMenu">
     <ul class="nav-links">
       <li><a href="internship.html">Internships</a></li>
       <li><a href="jobs.html">Jobs</a></li>
@@ -48,27 +46,22 @@
     </ul>
   </nav>
 
-  <!-- For Business -->
   <div class="btn-business">For Business</div>
 
-  <!-- Right nav icons -->
   <div class="nav-icons">
     <a href="#" class="icon" title="Notifications" onclick="openNotification()">
       <i class="fas fa-bell"></i>
       <span class="badge">3</span>
     </a>
-
     <a href="#" class="icon" title="Messages" onclick="openMessages()">
       <i class="fas fa-envelope"></i>
       <span class="badge">2</span>
     </a>
-
     <a href="#" id="profileToggle" class="profile-img" title="Profile">
       <img src="img/profile.png" alt="Profile" />
     </a>
   </div>
 </header>
-
 
   <!-- ========== MAIN CONTENT ========== -->
   <main>
@@ -194,7 +187,6 @@
     </div>
   </footer>
 
-
 <!-- Notification Sidebar -->
 <div id="notificationSidebar" class="notification-sidebar">
   <div class="notification-header">
@@ -260,11 +252,6 @@
 </div>
 <div id="messagesOverlay" class="messages-overlay" onclick="closeMessages()"></div>
 
-
-
-
-
-
   <!-- ===== Profile Slide Panel (Right 30%) ===== -->
 <div class="profile-slide-panel" id="profilePanel">
   <div class="profile-panel-content">
@@ -319,7 +306,16 @@
   <!-- External JavaScript files -->
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
 
+    hamburger.addEventListener('click', function () {
+      navMenu.classList.toggle('active');
+    });
+  });
+</script>
 
 </body>
 </html>

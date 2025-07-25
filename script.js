@@ -175,11 +175,8 @@ function closeMessages() {
 
 
 
-// Hamburger Toggle
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.querySelector('.nav-links');
+// Make sure this is included in your script.js or just before </body>
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('active');
-});
+
+
+
