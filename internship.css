@@ -56,6 +56,20 @@ body {
   color: #555;
 }
 
+@media (max-width: 768px) {
+  .text-side h1 {
+    font-size: 2rem;
+  }
+
+  .text-side p {
+    font-size: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
 /* BUTTON GROUP */
 .button-group {
   display: flex;
@@ -142,10 +156,23 @@ body {
   box-shadow: 0 15px 30px rgba(0,0,0,0.2);
   filter: brightness(1.0) saturate(1.2);
 }
+@media (max-width: 768px) {
+  .image-side img {
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
 
 
 /* Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
+  .btn {
+    width: 90%; /* make them responsive */
+    text-align: center;
+  }
+
   .internship-content {
     flex-direction: column-reverse;
     padding-top: 40px;
@@ -158,6 +185,9 @@ body {
   .button-group {
     flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .categories {
@@ -195,6 +225,17 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .internship-grid {
+    grid-template-columns: 1fr; /* Stack cards */
+    padding: 0 1rem;
+  }
+
+  .internship-card {
+    width: 100%;
+  }
 }
 
 /* ===== Internship Card Design ===== */
@@ -424,9 +465,11 @@ body {
 }
 .sub-header-left {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 900px; /* space between p and view all */
+  width: 100%;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 .view-all-link {

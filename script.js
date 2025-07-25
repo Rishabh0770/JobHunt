@@ -175,8 +175,3 @@ function closeMessages() {
 
 
 
-// Make sure this is included in your script.js or just before </body>
-
-
-
-
