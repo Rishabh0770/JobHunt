@@ -23,48 +23,52 @@
 <body>
 
   <!-- ========== HEADER / NAVIGATION ========== -->
-  <header class="navbar">
-    <a href="index.html" class="logo">JobHunt</a>
+ <header class="navbar">
+  <a href="index.html" class="logo">JobHunt</a>
 
-    <!-- Search bar in navbar -->
-    <input type="text" placeholder="Search Opportunities..." class="search-input" />
+  <!-- Search bar -->
+  <input type="text" placeholder="Search Opportunities..." class="search-input" />
 
-    <!-- Navigation links -->
-   <nav>
-  <ul class="nav-links">
-    <li><a href="internship.html">Internships</a></li>
-    <li><a href="jobs.html">Jobs</a></li>
-    <li><a href="competitions.html">Competitions</a></li>
-    <li><a href="mentorships.html">Mentorships</a></li>
-    <li><a href="practice.html">Practice</a></li>
-    <li><a href="more.html">More</a></li>
-  </ul>
-</nav>
+  <!-- Hamburger Menu (Mobile Only) -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
+  <!-- Navigation Links -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="internship.html">Internships</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="competitions.html">Competitions</a></li>
+      <li><a href="mentorships.html">Mentorships</a></li>
+      <li><a href="practice.html">Practice</a></li>
+      <li><a href="more.html">More</a></li>
+    </ul>
+  </nav>
 
-    <!-- CTA for Business users -->
-    <div class="btn-business">For Business</div>
+  <!-- For Business -->
+  <div class="btn-business">For Business</div>
 
-    <!-- Right navbar icons: Notification, Inbox, Profile -->
-    <div class="nav-icons">
-      <a href="#" class="icon" title="Notifications" onclick="openNotification()">
-  <i class="fas fa-bell"></i>
-  <span class="badge">3</span>
-</a>
+  <!-- Right nav icons -->
+  <div class="nav-icons">
+    <a href="#" class="icon" title="Notifications" onclick="openNotification()">
+      <i class="fas fa-bell"></i>
+      <span class="badge">3</span>
+    </a>
 
-<!-- Messages Icon in Navbar -->
-<a href="#" class="icon" title="Messages" onclick="openMessages()">
-  <i class="fas fa-envelope"></i>
-  <span class="badge">2</span>
-</a>
+    <a href="#" class="icon" title="Messages" onclick="openMessages()">
+      <i class="fas fa-envelope"></i>
+      <span class="badge">2</span>
+    </a>
 
-      <!-- Profile icon to toggle profile panel -->
-      <a href="#" id="profileToggle" class="profile-img" title="Profile">
-  <img src="img/profile.png" alt="Profile" />
-</a>
-    </div>
-    
-  </header>
+    <a href="#" id="profileToggle" class="profile-img" title="Profile">
+      <img src="img/profile.png" alt="Profile" />
+    </a>
+  </div>
+</header>
+
 
   <!-- ========== MAIN CONTENT ========== -->
   <main>
