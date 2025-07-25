@@ -31,12 +31,14 @@ body {
 .internship-content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 3rem;
   min-height: 80vh;
 }
-
+.internship-main {
+  padding: 4rem 2rem;
+}
 /* LEFT TEXT SIDE */
 .text-side {
   flex: 1;
@@ -56,22 +58,81 @@ body {
   color: #555;
 }
 
+.image-side {
+  flex: 1;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .internship-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .image-side{
+    width: 100%;
+        order: -1; /* ✅ Moves image to top */
+
+  } 
+  
+  .text-side {
+    width: 100%;
+        order: 1;
+
+  }
+
+  .text-side h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+        line-height: 1.3;
+
+  }
+
+  .text-side p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+}
+
 /* BUTTON GROUP */
 .button-group {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 .btn {
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: #2d9cdb;
+  color: #fff;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
+@media (max-width: 768px) {
+.button-group {
+    flex-direction: row; /* ✅ Keep buttons in one row */
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    flex: 1 1 140px;
+    max-width: 160px;
+        margin-bottom: 10px;
+  }
+}
+
+.btn:hover {
+  background: #247bb5;
+}
 .find-internships {
   background-color: #2d9cdb;
   color: #fff;
@@ -104,26 +165,37 @@ body {
 .category {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.5rem;
   background-color: #fffbe6;
   border: 1px solid #f9c100;
-  padding: 10px 16px;
-  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
+    font-size: 0.95rem;
   transition: all 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  .categories {
+    justify-content: center;
+  }
+
+  .category {
+    flex: 1 1 auto;
+  }
+}
 .category:hover {
   background-color: #fff1a8;
 }
 
-.category .icon {
-  width: 28px;
-  height: 28px;
+.icon {
+  width: 22px;
+  height: 22px;
   background: #f9c100;
   border-radius: 25%;
   padding: 5px;
+  text-align: center;
 }
 
 /* RIGHT IMAGE SIDE */
@@ -135,6 +207,7 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
   cursor: pointer;
+  height: auto;
 }
 
 .image-side img:hover {
@@ -143,41 +216,6 @@ body {
   filter: brightness(1.0) saturate(1.2);
 }
 
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .btn {
-    width: 90%; /* make them responsive */
-    text-align: center;
-  }
-
-  .internship-content {
-    flex-direction: column-reverse;
-    padding-top: 40px;
-  }
-
-  .text-side {
-    text-align: center;
-  }
-
-  .button-group {
-    flex-direction: column;
-    align-items: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }
-
-  .categories {
-    justify-content: center;
-  }
-
-  .category {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-/* recommended internship section */
 /* ===== Internship Section ===== */
 .internship-main-container {
   max-width: 1200px;
@@ -189,9 +227,18 @@ body {
   background: #f9fafc;
 }
 .internship-content {
-  margin-top: 0; /* or 60px if navbar is fixed */
-  padding: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+  min-height: 80vh;
+  padding: 0; /* ✅ Remove the 100px padding */
+  margin: 0 auto; /* ✅ Center align */
+  max-width: 1200px; /* ✅ Add max-width to keep it in center */
+  width: 100%;
 }
+
 .section-header h2 {
   font-size: 2rem;
   font-weight: 600;
