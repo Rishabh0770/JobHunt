@@ -1,4 +1,6 @@
-/* RESET STYLES */
+/* ============================== */
+/*          RESET STYLES         */
+/* ============================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,15 +11,16 @@ html {
   scroll-behavior: smooth;
 }
 
-/* BASE STYLES */
+/* ============================== */
+/*          BASE STYLES          */
+/* ============================== */
 body {
   font-family: 'Outfit', sans-serif;
   background: linear-gradient(135deg, #f4f6fa, #e7ecf5);
   color: #333;
-  padding: 20px; /* ✅ Remove all padding */
+  padding: 20px;
   margin: 0;
 }
-
 
 .logo {
   text-decoration: none;
@@ -27,7 +30,13 @@ body {
   color: #2d9cdb;
 }
 
-/* Container for both sides */
+/* ============================== */
+/*       INTERNSHIP HERO         */
+/* ============================== */
+.internship-main {
+  padding: 4rem 2rem;
+}
+
 .internship-content {
   display: flex;
   align-items: center;
@@ -35,11 +44,12 @@ body {
   flex-wrap: wrap;
   gap: 3rem;
   min-height: 80vh;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
 }
-.internship-main {
-  padding: 4rem 2rem;
-}
-/* LEFT TEXT SIDE */
+
 .text-side {
   flex: 1;
   text-align: center;
@@ -58,46 +68,6 @@ body {
   color: #555;
 }
 
-.image-side {
-  flex: 1;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .internship-content {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .image-side{
-    width: 100%;
-        order: -1; /* ✅ Moves image to top */
-
-  } 
-  
-  .text-side {
-    width: 100%;
-        order: 1;
-
-  }
-
-  .text-side h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-        line-height: 1.3;
-
-  }
-
-  .text-side p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    padding: 0 1rem;
-  }
-}
-
-/* BUTTON GROUP */
 .button-group {
   display: flex;
   gap: 1rem;
@@ -116,23 +86,10 @@ body {
   transition: 0.3s ease;
 }
 
-@media (max-width: 768px) {
-.button-group {
-    flex-direction: row; /* ✅ Keep buttons in one row */
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    flex: 1 1 140px;
-    max-width: 160px;
-        margin-bottom: 10px;
-  }
-}
-
 .btn:hover {
   background: #247bb5;
 }
+
 .find-internships {
   background-color: #2d9cdb;
   color: #fff;
@@ -153,7 +110,6 @@ body {
   color: #fff;
 }
 
-/* CATEGORY BUTTONS */
 .categories {
   display: flex;
   justify-content: center;
@@ -172,19 +128,10 @@ body {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
-    font-size: 0.95rem;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .categories {
-    justify-content: center;
-  }
-
-  .category {
-    flex: 1 1 auto;
-  }
-}
 .category:hover {
   background-color: #fff1a8;
 }
@@ -192,13 +139,21 @@ body {
 .icon {
   width: 22px;
   height: 22px;
-  background: #f9c100;
   border-radius: 25%;
   padding: 5px;
+}
+
+.icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* subtle glow */
+  border-radius: 8px;
+}
+
+
+.image-side {
+  flex: 1;
   text-align: center;
 }
 
-/* RIGHT IMAGE SIDE */
 .image-side img {
   width: 100%;
   max-width: 450px;
@@ -216,27 +171,77 @@ body {
   filter: brightness(1.0) saturate(1.2);
 }
 
-/* ===== Internship Section ===== */
+/* ============================== */
+/*         MEDIA QUERIES         */
+/* ============================== */
+@media (max-width: 768px) {
+  .internship-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .image-side {
+    width: 100%;
+    order: -1;
+  }
+
+  .text-side {
+    width: 100%;
+    order: 1;
+  }
+
+  .text-side h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .text-side p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+
+  .button-group {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    flex: 1 1 140px;
+    max-width: 160px;
+    margin-bottom: 10px;
+  }
+
+  .categories {
+    justify-content: center;
+  }
+
+  .category {
+    flex: 1 1 auto;
+  }
+}
+
+/* ============================== */
+/*    INTERNSHIP LIST SECTION    */
+/* ============================== */
 .internship-main-container {
   max-width: 1200px;
   margin: auto;
   padding: 2rem 3%;
 }
+
 .internship-section {
   padding: 2rem 3%;
   background: #f9fafc;
 }
-.internship-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 3rem;
-  min-height: 80vh;
-  padding: 0; /* ✅ Remove the 100px padding */
-  margin: 0 auto; /* ✅ Center align */
-  max-width: 1200px; /* ✅ Add max-width to keep it in center */
-  width: 100%;
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .section-header h2 {
@@ -246,13 +251,23 @@ body {
   color: #333;
 }
 
+.section-header span {
+  background-color: #ffeaa7;
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
 .internship-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
-/* ===== Internship Card Design ===== */
+/* ============================== */
+/*         INTERNSHIP CARD       */
+/* ============================== */
 .internship-card {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
@@ -269,40 +284,12 @@ body {
   box-shadow: 0 10px 20px rgb(29, 133, 161);
 }
 
-.section-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .section-header h2 {
-      font-size: 2rem;
-      color: #102851;
-    }
-
-    .section-header span {
-      background-color: #ffeaa7;
-      padding: 0.3rem 1rem;
-      border-radius: 2rem;
-      font-weight: bold;
-      margin-left: 0.5rem;
-    }
-
 .card-header {
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
 }
-
- .badge {
-      padding: 2px 8px;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      background-color: #ececec;
-      font-weight: 500;
-    }
-
-    
 
 .card-header img {
   width: 50px;
@@ -333,7 +320,22 @@ body {
   color: #444;
 }
 
-   .section1-header h2 {
+.badge {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  background-color: #ececec;
+  font-weight: 500;
+}
+
+/* ============================== */
+/*       JOB CARD LIST VIEW      */
+/* ============================== */
+.section1-header {
+  margin-bottom: 20px;
+}
+
+.section1-header h2 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
@@ -346,123 +348,6 @@ body {
   color: #666;
   text-align: left;
   margin-bottom: 1.5rem;
-}
-    .job-card {
-      width: 300px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      background-color: #fff;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      border: 1px solid #e1e1e1;
-      position: relative;
-    }
-
-    .job-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-    }
-
-    .job-cover {
-      background: linear-gradient(to right, #4a90e2, #0070f3);
-      height: 100px;
-      position: relative;
-    }
-
-    .job-logo {
-      position: absolute;
-      top: 50%;
-      right: 16px;
-      transform: translateY(-50%);
-      background-color: #fff;
-      padding: 8px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .job-logo img {
-      height: 40px;
-      width: 40px;
-      object-fit: contain;
-    }
-
-    .job-content {
-      padding: 16px;
-    }
-
-    .badges {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .badge {
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-weight: 600;
-    }
-
-    .badge.wfh {
-      background-color: #f0f0f0;
-      color: #333;
-    }
-
-    .badge.hiring {
-      background-color: #ffdb57;
-      color: #000;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .job-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: #000000;
-      margin-bottom: 4px;
-    }
-
-    .company-name {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 12px;
-    }
-
-    .stats {
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      color: #333;
-    }
-
-    .stats div i {
-      margin-right: 6px;
-      color: #555;
-    }
-
-    .apply-arrow {
-      position: absolute;
-      bottom: 16px;
-      right: 16px;
-      background-color: #1e88e5;
-      color: white;
-      border-radius: 50%;
-      padding: 8px;
-      font-size: 14px;
-      transition: background 0.3s ease;
-    }
-
-    .job-card:hover .apply-arrow {
-      background-color: #0f66d6;
-    }
-
-    
-
-
-.section1-header {
-  margin-bottom: 20px;
 }
 
 .sub-header-row {
@@ -477,6 +362,7 @@ body {
   color: #555;
   margin: 0;
 }
+
 .sub-header-left {
   display: flex;
   justify-content: space-between;
@@ -495,9 +381,7 @@ body {
   border-radius: 6px;
   transition: all 0.3s ease;
   margin-top: 4px;
-  /* ✅ remove margin-left */
 }
-
 
 .view-all-link:hover {
   background-color: #e6f0ff;
@@ -505,17 +389,106 @@ body {
   text-decoration: underline;
 }
 
+.job-card {
+  width: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border: 1px solid #e1e1e1;
+  position: relative;
+}
 
+.job-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
 
+.job-cover {
+  background: linear-gradient(to right, #4a90e2, #0070f3);
+  height: 100px;
+  position: relative;
+}
 
+.job-logo {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 
+.job-logo img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
 
+.job-content {
+  padding: 16px;
+}
 
+.badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
 
+.badge.wfh {
+  background-color: #f0f0f0;
+  color: #333;
+}
 
+.badge.hiring {
+  background-color: #ffdb57;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 
+.job-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 4px;
+}
 
+.company-name {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
 
+.stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #333;
+}
 
+.stats div i {
+  margin-right: 6px;
+  color: #555;
+}
 
+.apply-arrow {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: #1e88e5;
+  color: white;
+  border-radius: 50%;
+  padding: 8px;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
 
+.job-card:hover .apply-arrow {
+  background-color: #0f66d6;
+}
