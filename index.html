@@ -195,29 +195,41 @@
   </div>
   <hr>
   <div class="notification-body">
-    <a href="#" class="select-link">Select</a>
-    <div class="notification-item">
-      <i class="fas fa-bell"></i>
-      <div>
-        <p>You have earned badges for Daily Visit</p>
-        <small>21 Jul 25, 08:42 AM IST</small>
-      </div>
-    </div>
-    <div class="notification-item">
-      <i class="fas fa-bell"></i>
-      <div>
-        <p>You have earned badges for Opportunity Registration</p>
-        <small>20 Jul 25, 11:50 PM IST</small>
-      </div>
-    </div>
-    <div class="notification-item">
-      <i class="fas fa-bell"></i>
-      <div>
-        <p>You have earned badges for User Sign-Up</p>
-        <small>03 Jul 25, 09:21 AM IST</small>
-      </div>
+  <a href="#" class="select-link" onclick="toggleSelectMode(event)">Select</a>
+
+  <div class="notification-item">
+    <input type="checkbox" class="select-checkbox" />
+    <i class="fas fa-bell"></i>
+    <div>
+      <p>You have earned badges for Daily Visit</p>
+      <small>21 Jul 25, 08:42 AM IST</small>
     </div>
   </div>
+
+  <div class="notification-item">
+    <input type="checkbox" class="select-checkbox" />
+    <i class="fas fa-bell"></i>
+    <div>
+      <p>You have earned badges for Opportunity Registration</p>
+      <small>20 Jul 25, 11:50 PM IST</small>
+    </div>
+  </div>
+
+  <div class="notification-item">
+    <input type="checkbox" class="select-checkbox" />
+    <i class="fas fa-bell"></i>
+    <div>
+      <p>You have earned badges for User Sign-Up</p>
+      <small>03 Jul 25, 09:21 AM IST</small>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="notification-actions" id="notificationActions">
+    <button onclick="deleteSelected()">Delete Selected</button>
+    <button onclick="viewSelected()">View Selected</button>
+  </div>
+</div>
 </div>
 
 <div class="notification-overlay" id="notificationOverlay"></div>

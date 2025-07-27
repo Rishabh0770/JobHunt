@@ -931,3 +931,47 @@ a {
     display: none;
   }
 }
+
+
+/* Hide checkboxes by default */
+.select-checkbox {
+  display: none;
+  margin-right: 10px;
+}
+
+/* Show checkbox in selection mode */
+.select-mode .select-checkbox {
+  display: inline-block;
+}
+
+/* Highlight selected item */
+.notification-item.selected {
+  background-color: rgba(255, 200, 0, 0.15);
+  border-left: 4px solid #ffc107;
+}
+
+/* Notification actions buttons */
+.notification-actions {
+  display: none;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.select-mode .notification-actions {
+  display: block;
+}
+
+.notification-actions button {
+  margin: 0 5px;
+  padding: 8px 14px;
+  border: none;
+  background: #ff6b6b;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.notification-actions button:hover {
+  background: #ff5252;
+}

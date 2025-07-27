@@ -175,3 +175,44 @@ function closeMessages() {
 
 
 
+function toggleSelectMode(event) {
+  event.preventDefault();
+  const sidebar = document.getElementById("notificationSidebar");
+  sidebar.classList.toggle("select-mode");
+
+  // Uncheck all when exiting selection mode
+  if (!sidebar.classList.contains("select-mode")) {
+    document.querySelectorAll(".select-checkbox").forEach(cb => {
+      cb.checked = false;
+      cb.closest(".notification-item").classList.remove("selected");
+    });
+  }
+}
+
+// When checkbox is clicked, visually mark it
+document.addEventListener('change', function (e) {
+  if (e.target.classList.contains('select-checkbox')) {
+    e.target.closest('.notification-item').classList.toggle('selected', e.target.checked);
+  }
+});
+
+function deleteSelected() {
+  const checkedItems = document.querySelectorAll('.select-checkbox:checked');
+  checkedItems.forEach(cb => cb.closest('.notification-item').remove());
+}
+
+function viewSelected() {
+  const selected = [];
+  document.querySelectorAll('.select-checkbox:checked').forEach(cb => {
+    const content = cb.closest('.notification-item').querySelector('p').innerText;
+    selected.push(content);
+  });
+
+  alert("Selected Notifications:\n\n" + selected.join('\n'));
+}
+
+
+
+
+
+

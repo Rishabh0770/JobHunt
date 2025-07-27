@@ -9,7 +9,10 @@
 
 html {
   scroll-behavior: smooth;
+  margin: 0 !important;
+  padding: 0 !important;
 }
+
 
 /* ============================== */
 /*          BASE STYLES          */
@@ -18,7 +21,7 @@ body {
   font-family: 'Outfit', sans-serif;
   background: linear-gradient(135deg, #f4f6fa, #e7ecf5);
   color: #333;
-  padding: 20px;
+  padding: 0;
   margin: 0;
 }
 
@@ -33,8 +36,9 @@ body {
 /* ============================== */
 /*       INTERNSHIP HERO         */
 /* ============================== */
+
 .internship-main {
-  padding: 4rem 2rem;
+  padding: -4rem -2rem;
 }
 
 .internship-content {
