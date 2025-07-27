@@ -18,6 +18,8 @@
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   
 </head>
 
@@ -27,7 +29,13 @@
 <header class="navbar">
   <a href="index.html" class="logo">JobHunt</a>
 
-  <input type="text" placeholder="Search Opportunities..." class="search-input" />
+<form class="search-form" action="search.html" method="GET">
+  <div class="search-box">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" name="query" placeholder="Search Opportunities..." class="search-input" required />
+  </div>
+</form>
+
 
   <!-- ✅ Hamburger Icon -->
   <div class="hamburger" id="hamburger">

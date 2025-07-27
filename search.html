@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Jobs | JobHunt</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" />
+  <style>
+    body {
+      background: linear-gradient(to right, #eef2f3, #dff1ff);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .search-section {
+      padding: 50px 20px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    }
+
+    .search-bar input,
+    .search-bar select {
+      border-radius: 30px;
+    }
+
+    .job-card {
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .job-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .job-meta {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .btn-apply {
+      border-radius: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+    <a class="navbar-brand fw-bold" href="index.html">JobHunt</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="search.html">Search</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Search Section -->
+  <div class="container my-5">
+    <div class="search-section">
+      <h2 class="text-center mb-4">🔍 Find Your Dream Job</h2>
+      <form action="search.php" method="GET">
+        <div class="row g-3 justify-content-center search-bar">
+          <div class="col-md-4">
+            <input type="text" name="title" class="form-control" placeholder="Job title or keyword" />
+          </div>
+          <div class="col-md-3">
+            <input type="text" name="location" class="form-control" placeholder="Location" />
+          </div>
+          <div class="col-md-3">
+            <select name="job_type" class="form-select">
+              <option value="">All Types</option>
+              <option value="Full-Time">Full-Time</option>
+              <option value="Part-Time">Part-Time</option>
+              <option value="Internship">Internship</option>
+              <option value="Remote">Remote</option>
+            </select>
+          </div>
+          <div class="col-md-2 text-center">
+            <button type="submit" class="btn btn-primary w-100 btn-apply">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Results Section -->
+    <div class="mt-5">
+      <h4 class="mb-3">📋 Search Results</h4>
+
+      <!-- Example Job Card (replace with PHP dynamic loop later) -->
+      <div class="card job-card p-4 mb-3">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="job-title">Frontend Developer</h5>
+            <p class="job-meta mb-1">ABC Pvt Ltd • Delhi • Full-Time</p>
+            <p class="text-muted small">Posted on: 2025-07-20</p>
+          </div>
+          <a href="#" class="btn btn-outline-primary btn-apply">Apply Now</a>
+        </div>
+      </div>
+
+      <!-- More job cards will be added dynamically via PHP -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p class="mb-0">© 2025 JobHunt | Your Career Starts Here</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
