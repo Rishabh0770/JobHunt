@@ -277,8 +277,10 @@
   <div class="profile-panel-content">
 
     <!-- Top Bar -->
-    <div class="panel-top-bar">
+    <div class="panel-top-bar" style="display: flex; justify-content: space-between; align-items: center;">
       <h3>👤 Profile</h3>
+<!-- Close Button -->
+<i class="fas fa-times close-profile-btn" onclick="closeProfilePanel()"></i>
     </div>
 
     <hr />
@@ -318,6 +320,7 @@
     <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
   </div>
 </div>
+
 
 <!-- Profile Overlay (click to close) -->
 <div class="profile-overlay" id="profileOverlay"></div>

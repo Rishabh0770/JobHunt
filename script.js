@@ -96,6 +96,16 @@ profileOverlay.addEventListener("click", function () {
   profileOverlay.classList.remove("active");
 });
 
+function openProfilePanel() {
+  document.getElementById("profilePanel").classList.add("active");
+  document.getElementById("profileOverlay").classList.add("active");
+}
+
+function closeProfilePanel() {
+  document.getElementById("profilePanel").classList.remove("active");
+  document.getElementById("profileOverlay").classList.remove("active");
+}
+
 // Notification Toggle
 const notificationToggle = document.getElementById("notificationToggle");
 const notificationSidebar = document.getElementById("notificationSidebar");

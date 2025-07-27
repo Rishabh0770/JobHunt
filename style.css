@@ -596,6 +596,24 @@ a {
 }
 
 /* === Profile Panel Content === */
+.close-profile-btn {
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 4px 8px;
+  border-radius: 40%;
+}
+
+.close-profile-btn:hover {
+  color: #fff;
+  background-color: #ff4d4d;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+
+
 .profile-panel-content {
   padding: 30px 20px;
 }
@@ -688,18 +706,21 @@ a {
   top: 0;
   left: 0;
   width: 70%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.25); /* ⬅️ Increased from 0.1 to 0.25 */
-  backdrop-filter: blur(8px);           /* ⬅️ Increased blur */
-  -webkit-backdrop-filter: blur(8px);   /* For Safari */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 9998;
-  display: none;
+  opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s ease;
 }
 
 .profile-overlay.active {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
+
 
 /* === Header inside panel === */
 .profile-panel .sidebar-header {
