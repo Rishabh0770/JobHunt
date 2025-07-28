@@ -224,5 +224,41 @@ function viewSelected() {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarLinks = document.querySelectorAll(".sidebar-links a");
+  const currentPage = window.location.pathname.split("/").pop(); // get current file name
+
+  sidebarLinks.forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active-link");
+    }
+  });
+});
+
+document.querySelectorAll('.sidebar-links a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    // Optional ripple effect or visual feedback here
+    link.classList.add("clicked"); // temporary class
+    setTimeout(() => link.classList.remove("clicked"), 200);
+  });
+});
 
 
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const logoutBtn = document.querySelector(".logout-btn");
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+      // Clear local storage or session data
+      localStorage.clear();
+
+      // Optional: show confirmation
+      alert("You have been logged out.");
+
+      // Redirect to homepage or login page
+      window.location.href = "index.html"; // Change as per your site structure
+    });
+  }
+});

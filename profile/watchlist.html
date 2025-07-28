@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watchlist | JobHunt</title>
+  <link rel="stylesheet" href="profile.css" />
+  <link rel="stylesheet" href="/style.css">
+    <!-- Google Fonts for typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Swiper slider styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- ========== HEADER / NAVIGATION ========== -->
+<header class="navbar">
+  <a href="/index.html" class="logo">JobHunt</a>
+
+<form class="search-form" action="/search.html" method="GET">
+  <div class="search-box">
+    <i class="fas fa-search search-icon"></i>
+    <input type="text" name="query" placeholder="Search Opportunities..." class="search-input" required />
+  </div>
+</form>
+
+
+  <!-- ✅ Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- ✅ Mobile Navigation Menu -->
+  <nav id="navMenu">
+    <ul class="nav-links">
+      <li><a href="/internship.html">Internships</a></li>
+      <li><a href="/jobs.html">Jobs</a></li>
+      <li><a href="/competitions.html">Competitions</a></li>
+      <li><a href="/mentorships.html">Mentorships</a></li>
+      <li><a href="/practice.html">Practice</a></li>
+      <li><a href="/more.html">More</a></li>
+    </ul>
+  </nav>
+
+  <div class="btn-business">For Business</div>
+
+  <div class="nav-icons">
+    <a href="#" class="icon" title="Notifications" onclick="openNotification()">
+      <i class="fas fa-bell"></i>
+      <span class="badge">3</span>
+    </a>
+    <a href="#" class="icon" title="Messages" onclick="openMessages()">
+      <i class="fas fa-envelope"></i>
+      <span class="badge">2</span>
+    </a>
+    <a href="#" id="profileToggle" class="profile-img" title="Profile">
+      <img src="/img/profile.png" alt="Profile" />
+    </a>
+  </div>
+</header>
+
+  <main class="page-content">
+    <h1>Watchlist</h1>
+    <p>Your bookmarked jobs, internships, or events to keep an eye on.</p>
+  </main>
+
+  <footer><p>© 2025 JobHunt. All rights reserved.</p></footer>
+ <!-- Notification Sidebar -->
+<div id="notificationSidebar" class="notification-sidebar">
+  <div class="notification-header">
+    <h2>Notifications</h2>
+    <span class="close-btn" onclick="closeNotification()">&times;</span>
+  </div>
+  <hr>
+  <div class="notification-body">
+  <a href="#" class="select-link" onclick="toggleSelectMode(event)">Select</a>
+
+  <div class="notification-item">
+    <input type="checkbox" class="select-checkbox" />
+    <i class="fas fa-bell"></i>
+    <div>
+      <p>You have earned badges for Daily Visit</p>
+      <small>21 Jul 25, 08:42 AM IST</small>
+    </div>
+  </div>
+
+  <div class="notification-item">
+    <input type="checkbox" class="select-checkbox" />
+    <i class="fas fa-bell"></i>
+    <div>
+      <p>You have earned badges for Opportunity Registration</p>
+      <small>20 Jul 25, 11:50 PM IST</small>
+    </div>
+  </div>
+
+  <div class="notification-item">
+    <input type="checkbox" class="select-checkbox" />
+    <i class="fas fa-bell"></i>
+    <div>
+      <p>You have earned badges for User Sign-Up</p>
+      <small>03 Jul 25, 09:21 AM IST</small>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="notification-actions" id="notificationActions">
+    <button onclick="deleteSelected()">Delete Selected</button>
+    <button onclick="viewSelected()">View Selected</button>
+  </div>
+</div>
+</div>
+
+<div class="notification-overlay" id="notificationOverlay"></div>
+
+
+<div id="messagesSidebar" class="messages-sidebar">
+
+
+  <div class="messages-header">
+    <h3>Messages</h3>
+    <span class="close-btn" onclick="closeMessages()">&times;</span>
+  </div>
+
+  <!-- Messages List -->
+  <div id="messagesList" class="messages-list">
+    <div class="message-item" onclick="openMessage(this)">
+      <img src="https://jobhunt.com/images/logo.png" alt="Sender" />
+      <div class="message-info">
+        <strong>JobHunt</strong>
+        <span class="timestamp">1 day ago</span>
+      </div>
+    </div>
+    <!-- Add more .message-item if needed -->
+  </div>
+
+  <!-- Single Message View -->
+  <div id="messageContent" class="message-content" style="display: none;">
+    <button onclick="goBackToList()" class="back-btn">← Back</button>
+    <h4 class="sender-name">JobHunt</h4>
+    <p class="message-text">Hey Rishav! Thanks for applying. We'll get back to you shortly. Stay tuned 🚀</p>
+  </div>
+</div>
+<div id="messagesOverlay" class="messages-overlay" onclick="closeMessages()"></div>
+
+  <!-- ===== Profile Slide Panel (Right 30%) ===== -->
+<div class="profile-slide-panel" id="profilePanel">
+  <div class="profile-panel-content">
+
+    <!-- Top Bar -->
+    <div class="panel-top-bar" style="display: flex; justify-content: space-between; align-items: center;">
+      <h3>👤 Profile</h3>
+<!-- Close Button -->
+<i class="fas fa-times close-profile-btn" onclick="closeProfilePanel()"></i>
+    </div>
+
+    <hr />
+
+    <!-- Profile Info -->
+    <div class="sidebar-header">
+      <img src="/img/profile.png" class="sidebar-avatar" alt="User Profile" />
+      <div class="sidebar-user-info">
+        <h4>Rishav Sharma</h4>
+        <p>rishav123@gmail.com</p>
+        <a href="#" class="view-profile">View Profile →</a>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Sidebar Menu -->
+<div class="sidebar-section">
+  <h5>For Users</h5>
+  <ul class="sidebar-links">
+      <li><a href="/profile/registration.html"><i class="fas fa-file-alt"></i> Registration / Applications</a></li>
+      <li><a href="/profile/my-jobs.html"><i class="fas fa-briefcase"></i> My Jobs</a></li>
+      <li><a href="/profile/opportunities.html"><i class="fas fa-rocket"></i> My Opportunities</a></li>
+      <li><a href="/profile/festivals.html"><i class="fas fa-campground"></i> My Festivals</a></li>
+      <li><a href="/profile/referrals.html"><i class="fas fa-user-friends"></i> Referrals</a></li>
+      <li><a href="/profile/watchlist.html"><i class="fas fa-eye"></i> Watchlist</a></li>
+      <li><a href="/profile/bookmarked.html"><i class="fas fa-bookmark"></i> Bookmarked</a></li>
+      <li><a href="/profile/recently-viewed.html"><i class="fas fa-history"></i> Recently Viewed Courses</a></li>
+      <li><a href="/profile/certificates.html"><i class="fas fa-certificate"></i> Certificates</a></li>
+      <li><a href="/profile/settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+  </ul>
+</div>
+
+
+    <hr />
+
+    <!-- Logout -->
+    <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+  </div>
+</div>
+
+
+<!-- Profile Overlay (click to close) -->
+<div class="profile-overlay" id="profileOverlay"></div>
+
+
+  <!-- External JavaScript files -->
+  <script src="/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', function () {
+      navMenu.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>
