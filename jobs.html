@@ -455,49 +455,54 @@
 <!-- 🔹 Overlay behind Messages Panel -->
 <div id="messagesOverlay" class="messages-overlay" onclick="closeMessages()"></div>
 
-<!-- ========== PROFILE SLIDE PANEL ========== -->
+ <!-- ===== Profile Slide Panel (Right 30%) ===== -->
 <div class="profile-slide-panel" id="profilePanel">
   <div class="profile-panel-content">
 
-    <!-- 🔹 Top bar of the profile panel -->
-    <div class="panel-top-bar">
+    <!-- Top Bar -->
+    <div class="panel-top-bar" style="display: flex; justify-content: space-between; align-items: center;">
       <h3>👤 Profile</h3>
+<!-- Close Button -->
+<i class="fas fa-times close-profile-btn" onclick="closeProfilePanel()"></i>
     </div>
 
     <hr />
 
-    <!-- 🔹 Profile Info Section -->
+    <!-- Profile Info -->
     <div class="sidebar-header">
-      <img src="img/profile.png" class="sidebar-avatar" alt="User Profile" />
-      <div class="sidebar-user-info">
-        <h4>Rishav Sharma</h4>
-        <p>rishav123@gmail.com</p>
-        <a href="#" class="view-profile">View Profile →</a>
-      </div>
-    </div>
+  <img src="img/profile.png" class="sidebar-avatar" alt="User Profile" />
+  <div class="sidebar-user-info">
+    <h4>Rishav Sharma</h4>
+    <p>rishav123@gmail.com</p>
+    <a href="/profile/user-profile.html" class="view-profile">View Profile →</a>
+    <a href="profile/edit-profile.html" class="edit-profile-btn">Edit Profile ✏️</a>
+  </div>
+</div>
+
 
     <hr />
 
-    <!-- 🔹 Sidebar Navigation Links for Users -->
-    <div class="sidebar-section">
-      <h5>For Users</h5>
-      <ul class="sidebar-links">
-        <li><i class="fas fa-file-alt"></i> Registration / Applications</li>
-        <li><i class="fas fa-briefcase"></i> My Jobs</li>
-        <li><i class="fas fa-rocket"></i> My Opportunities</li>
-        <li><i class="fas fa-campground"></i> My Festivals</li>
-        <li><i class="fas fa-user-friends"></i> Referrals</li>
-        <li><i class="fas fa-eye"></i> Watchlist</li>
-        <li><i class="fas fa-bookmark"></i> Bookmarked</li>
-        <li><i class="fas fa-history"></i> Recently Viewed Courses</li>
-        <li><i class="fas fa-certificate"></i> Certificates</li>
-        <li><i class="fas fa-cog"></i> Settings</li>
-      </ul>
-    </div>
+    <!-- Sidebar Menu -->
+<div class="sidebar-section">
+  <h5>For Users</h5>
+  <ul class="sidebar-links">
+      <li><a href="profile/registration.html"><i class="fas fa-file-alt"></i> Registration / Applications</a></li>
+      <li><a href="profile/my-jobs.html"><i class="fas fa-briefcase"></i> My Jobs</a></li>
+      <li><a href="profile/opportunities.html"><i class="fas fa-rocket"></i> My Opportunities</a></li>
+      <li><a href="profile/festivals.html"><i class="fas fa-campground"></i> My Festivals</a></li>
+      <li><a href="profile/referrals.html"><i class="fas fa-user-friends"></i> Referrals</a></li>
+      <li><a href="profile/watchlist.html"><i class="fas fa-eye"></i> Watchlist</a></li>
+      <li><a href="profile/bookmarked.html"><i class="fas fa-bookmark"></i> Bookmarked</a></li>
+      <li><a href="profile/recently-viewed.html"><i class="fas fa-history"></i> Recently Viewed Courses</a></li>
+      <li><a href="profile/certificates.html"><i class="fas fa-certificate"></i> Certificates</a></li>
+      <li><a href="profile/settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+  </ul>
+</div>
+
 
     <hr />
 
-    <!-- 🔹 Logout Button -->
+    <!-- Logout -->
     <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
   </div>
 </div>

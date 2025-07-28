@@ -4,9 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Search Jobs | JobHunt</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <!-- Main CSS Files -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="favicon.png" />
+  <link rel="stylesheet" href="internship.css" />
+  <link rel="stylesheet" href="profile.css" />
+
+  <!-- Google Fonts for typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Swiper slider styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       background: linear-gradient(to right, #eef2f3, #dff1ff);
@@ -53,20 +65,45 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
-    <a class="navbar-brand fw-bold" href="index.html">JobHunt</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" href="search.html">Search</a></li>
-        <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-      </ul>
-    </div>
+   <!-- ========== HEADER / NAVIGATION ========== -->
+<header class="navbar">
+  <a href="index.html" class="logo">JobHunt</a>
+
+  <input type="text" placeholder="Search Opportunities..." class="search-input" />
+
+  <!-- ✅ Hamburger Icon -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- ✅ Mobile Navigation Menu -->
+  <nav id="navMenu">
+    <ul class="nav-links">
+      <li><a href="internship.html">Internships</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a href="competitions.html">Competitions</a></li>
+      <li><a href="mentorships.html">Mentorships</a></li>
+      <li><a href="practice.html">Practice</a></li>
+      <li><a href="more.html">More</a></li>
+    </ul>
   </nav>
+
+<button class="btn-business">For Business</button>
+
+  <div class="nav-icons">
+    <a href="#" class="icon" title="Notifications" onclick="openNotification()">
+      <i class="fas fa-bell"></i>
+      <span class="badge">3</span>
+    </a>
+    <a href="#" class="icon" title="Messages" onclick="openMessages()">
+      <i class="fas fa-envelope"></i>
+      <span class="badge">2</span>
+    </a>
+    <a href="#" id="profileToggle" class="profile-img" title="Profile">
+      <img src="img/profile.png" alt="Profile" />
+    </a>
+  </div>
+</header>
 
   <!-- Search Section -->
   <div class="container my-5">
@@ -116,10 +153,196 @@
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4">
-    <p class="mb-0">© 2025 JobHunt | Your Career Starts Here</p>
-  </footer>
+   <!-- ========== FOOTER ========== -->
+<footer class="site-footer reveal">
+  <div class="footer-container">
+
+    <!-- 🔹 Footer Brand Section: Brand name and tagline -->
+    <div class="footer-brand">
+      <h2>JobHunt</h2>
+      <p>Unlocking career potential for every dreamer out there.</p>
+    </div>
+
+    <!-- 🔹 Footer Navigation Links: Two columns of useful links -->
+    <div class="footer-links">
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="internship.html">Internships</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="competitions.html">Competitions</a></li>
+          <li><a href="practice.html">Practice</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 🔹 Social Media Icons: Facebook, Instagram, LinkedIn, X (Twitter) -->
+    <div class="footer-social">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="img/linkedin.png" alt="LinkedIn"></a>
+        <a href="#"><img src="img/X.png" alt="Twitter/X Icon"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 Footer Bottom Bar: Copyright notice -->
+  <div class="footer-bottom">
+    <p>© 2025 JobHunt. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ========== NOTIFICATION SIDEBAR ========== -->
+<div id="notificationSidebar" class="notification-sidebar">
+  <div class="notification-header">
+    <h2>Notifications</h2>
+    <span class="close-btn" onclick="closeNotification()">&times;</span>
+  </div>
+
+  <hr>
+
+  <!-- 🔹 Notification List Items -->
+  <div class="notification-body">
+    <a href="#" class="select-link">Select</a>
+    <div class="notification-item">
+      <i class="fas fa-bell"></i>
+      <div>
+        <p>You have earned badges for Daily Visit</p>
+        <small>21 Jul 25, 08:42 AM IST</small>
+      </div>
+    </div>
+    <div class="notification-item">
+      <i class="fas fa-bell"></i>
+      <div>
+        <p>You have earned badges for Opportunity Registration</p>
+        <small>20 Jul 25, 11:50 PM IST</small>
+      </div>
+    </div>
+    <div class="notification-item">
+      <i class="fas fa-bell"></i>
+      <div>
+        <p>You have earned badges for User Sign-Up</p>
+        <small>03 Jul 25, 09:21 AM IST</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🔹 Notification Overlay (used to dim background) -->
+<div class="notification-overlay" id="notificationOverlay"></div>
+
+<!-- ========== MESSAGES SIDEBAR ========== -->
+<div id="messagesSidebar" class="messages-sidebar">
+
+  <!-- 🔹 Header for Messages Panel -->
+  <div class="messages-header">
+    <h3>Messages</h3>
+    <span class="close-btn" onclick="closeMessages()">&times;</span>
+  </div>
+
+  <!-- 🔹 List of Messages -->
+  <div id="messagesList" class="messages-list">
+    <div class="message-item" onclick="openMessage(this)">
+      <img src="img/code.png" alt="Sender" />
+      <div class="message-info">
+        <strong>JobHunt</strong>
+        <span class="timestamp">1 day ago</span>
+      </div>
+    </div>
+    <!-- Add more .message-item if needed -->
+  </div>
+
+  <!-- 🔹 Single Message Detail View -->
+  <div id="messageContent" class="message-content" style="display: none;">
+    <button onclick="goBackToList()" class="back-btn">← Back</button>
+    <h4 class="sender-name">Unstop</h4>
+    <p class="message-text">Hey Rishav! Thanks for applying. We'll get back to you shortly. Stay tuned 🚀</p>
+  </div>
+</div>
+
+<!-- 🔹 Overlay behind Messages Panel -->
+<div id="messagesOverlay" class="messages-overlay" onclick="closeMessages()"></div>
+
+ <!-- ===== Profile Slide Panel (Right 30%) ===== -->
+<div class="profile-slide-panel" id="profilePanel">
+  <div class="profile-panel-content">
+
+    <!-- Top Bar -->
+    <div class="panel-top-bar" style="display: flex; justify-content: space-between; align-items: center;">
+      <h3>👤 Profile</h3>
+<!-- Close Button -->
+<i class="fas fa-times close-profile-btn" onclick="closeProfilePanel()"></i>
+    </div>
+
+    <hr />
+
+    <!-- Profile Info -->
+    <div class="sidebar-header">
+  <img src="img/profile.png" class="sidebar-avatar" alt="User Profile" />
+  <div class="sidebar-user-info">
+    <h4>Rishav Sharma</h4>
+    <p>rishav123@gmail.com</p>
+    <a href="/profile/user-profile.html" class="view-profile">View Profile →</a>
+    <a href="profile/edit-profile.html" class="edit-profile-btn">Edit Profile ✏️</a>
+  </div>
+</div>
+
+
+    <hr />
+
+    <!-- Sidebar Menu -->
+<div class="sidebar-section">
+  <h5>For Users</h5>
+  <ul class="sidebar-links">
+      <li><a href="profile/registration.html"><i class="fas fa-file-alt"></i> Registration / Applications</a></li>
+      <li><a href="profile/my-jobs.html"><i class="fas fa-briefcase"></i> My Jobs</a></li>
+      <li><a href="profile/opportunities.html"><i class="fas fa-rocket"></i> My Opportunities</a></li>
+      <li><a href="profile/festivals.html"><i class="fas fa-campground"></i> My Festivals</a></li>
+      <li><a href="profile/referrals.html"><i class="fas fa-user-friends"></i> Referrals</a></li>
+      <li><a href="profile/watchlist.html"><i class="fas fa-eye"></i> Watchlist</a></li>
+      <li><a href="profile/bookmarked.html"><i class="fas fa-bookmark"></i> Bookmarked</a></li>
+      <li><a href="profile/recently-viewed.html"><i class="fas fa-history"></i> Recently Viewed Courses</a></li>
+      <li><a href="profile/certificates.html"><i class="fas fa-certificate"></i> Certificates</a></li>
+      <li><a href="profile/settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+  </ul>
+</div>
+
+
+    <hr />
+
+    <!-- Logout -->
+    <button class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+  </div>
+</div>
+
+<!-- 🔹 Profile Background Overlay -->
+<div class="profile-overlay" id="profileOverlay"></div>
+
+<!-- ========== SCRIPTS (JS) ========== -->
+<script src="script.js"></script>
+<script src="profile.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', function () {
+      navMenu.classList.toggle('active');
+    });
+  });
+</script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
