@@ -508,7 +508,18 @@
 
 <!-- ========== SCRIPTS (JS) ========== -->
 <script src="script.js"></script>
+<script src="profile.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', function () {
+      navMenu.classList.toggle('active');
+    });
+  });
+</script>
 
 </body>
 </html>
