@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Read JobHunt's Privacy Policy to understand how we collect, use, and protect your data.">
+  <title>Privacy Policy - JobHunt</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .privacy-hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, rgba(45, 156, 219, 0.1), rgba(249, 193, 0, 0.1));
+      border-radius: 20px;
+      margin: 20px 0;
+    }
+
+    .privacy-hero h1 {
+      font-size: 48px;
+      color: #2d3436;
+      margin-bottom: 20px;
+    }
+
+    .privacy-hero p {
+      font-size: 16px;
+      color: #636e72;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .privacy-content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .privacy-content h2 {
+      font-size: 28px;
+      color: #2d9cdb;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
+    .privacy-content h3 {
+      font-size: 20px;
+      color: #2d3436;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .privacy-content p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .privacy-content ul {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+
+    .privacy-content ul li {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    .last-updated {
+      font-style: italic;
+      color: #888;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .privacy-hero h1 {
+        font-size: 32px;
+      }
+
+      .privacy-content {
+        padding: 25px;
+        margin: 20px 15px;
+      }
+
+      .privacy-content h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="navbar">
+    <a href="index.html" class="logo">JobHunt</a>
+    
+    <form class="search-form" action="search.html" method="GET">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" name="query" placeholder="Search Opportunities..." class="search-input" />
+      </div>
+    </form>
+
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="nav-links">
+        <li><a href="internship.html">Internships</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="mentorships.html">Mentorships</a></li>
+        <li><a href="practice.html">Practice</a></li>
+        <li><a href="more.html">More</a></li>
+      </ul>
+    </nav>
+
+    <div class="btn-business">For Business</div>
+
+    <div class="nav-icons">
+      <a href="#" class="icon" title="Notifications" onclick="openNotification()">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </a>
+      <a href="#" class="icon" title="Messages" onclick="openMessages()">
+        <i class="fas fa-envelope"></i>
+        <span class="badge">2</span>
+      </a>
+      <a href="#" id="profileToggle" class="profile-img" title="Profile">
+        <img src="img/profile.png" alt="Profile" />
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Hero Section -->
+    <section class="privacy-hero reveal">
+      <h1>Privacy Policy</h1>
+      <p>Your privacy is important to us. This policy outlines how we handle your data.</p>
+    </section>
+
+    <!-- Privacy Content -->
+    <div class="privacy-content reveal">
+      <p class="last-updated"><strong>Last Updated:</strong> November 1, 2025</p>
+
+      <p>
+        At JobHunt, we are committed to protecting your privacy and ensuring the security of your personal information. 
+        This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you use our platform.
+      </p>
+
+      <h2>1. Information We Collect</h2>
+      
+      <h3>1.1 Personal Information</h3>
+      <p>When you create an account or use our services, we may collect:</p>
+      <ul>
+        <li>Name and contact information (email address, phone number)</li>
+        <li>Profile information (education, work experience, skills)</li>
+        <li>Resume and application materials</li>
+        <li>Authentication credentials</li>
+        <li>Communication preferences</li>
+      </ul>
+
+      <h3>1.2 Usage Information</h3>
+      <p>We automatically collect information about how you interact with our platform:</p>
+      <ul>
+        <li>Device information (IP address, browser type, operating system)</li>
+        <li>Usage data (pages visited, features used, time spent)</li>
+        <li>Cookies and similar tracking technologies</li>
+        <li>Location data (with your permission)</li>
+      </ul>
+
+      <h2>2. How We Use Your Information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Provide, maintain, and improve our services</li>
+        <li>Match you with relevant job opportunities</li>
+        <li>Send you notifications about applications and opportunities</li>
+        <li>Communicate with you about our services</li>
+        <li>Personalize your experience on our platform</li>
+        <li>Analyze usage patterns and optimize our platform</li>
+        <li>Detect and prevent fraud and security issues</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+
+      <h2>3. Information Sharing and Disclosure</h2>
+      
+      <h3>3.1 With Your Consent</h3>
+      <p>
+        We may share your information with employers and recruiters when you apply for positions 
+        or opt into talent matching services.
+      </p>
+
+      <h3>3.2 Service Providers</h3>
+      <p>
+        We may share information with third-party service providers who help us operate our platform, 
+        including hosting, analytics, and customer support services.
+      </p>
+
+      <h3>3.3 Legal Requirements</h3>
+      <p>
+        We may disclose your information if required by law or in response to valid legal requests 
+        from government authorities.
+      </p>
+
+      <h2>4. Data Security</h2>
+      <p>
+        We implement industry-standard security measures to protect your personal information from 
+        unauthorized access, disclosure, alteration, or destruction. This includes:
+      </p>
+      <ul>
+        <li>Encryption of data in transit and at rest</li>
+        <li>Regular security audits and assessments</li>
+        <li>Access controls and authentication measures</li>
+        <li>Employee training on data protection</li>
+      </ul>
+
+      <h2>5. Your Rights and Choices</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access, update, or delete your personal information</li>
+        <li>Opt-out of marketing communications</li>
+        <li>Control cookie preferences</li>
+        <li>Request a copy of your data</li>
+        <li>Object to certain data processing activities</li>
+      </ul>
+
+      <h2>6. Cookies and Tracking Technologies</h2>
+      <p>
+        We use cookies and similar technologies to enhance your experience, analyze usage, and 
+        deliver personalized content. You can manage cookie preferences through your browser settings.
+      </p>
+
+      <h2>7. Data Retention</h2>
+      <p>
+        We retain your personal information for as long as necessary to provide our services and 
+        fulfill the purposes outlined in this policy, unless a longer retention period is required 
+        by law.
+      </p>
+
+      <h2>8. Children's Privacy</h2>
+      <p>
+        Our services are not intended for children under 13 years of age. We do not knowingly 
+        collect personal information from children under 13.
+      </p>
+
+      <h2>9. International Data Transfers</h2>
+      <p>
+        Your information may be transferred to and processed in countries other than your own. 
+        We ensure appropriate safeguards are in place to protect your data in accordance with 
+        this policy.
+      </p>
+
+      <h2>10. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. We will notify you of any material 
+        changes by posting the new policy on this page and updating the "Last Updated" date.
+      </p>
+
+      <h2>11. Contact Us</h2>
+      <p>
+        If you have questions or concerns about this Privacy Policy or our data practices, 
+        please contact us at:
+      </p>
+      <p>
+        Email: <a href="mailto:privacy@jobhunt.com" style="color: #2d9cdb;">privacy@jobhunt.com</a><br>
+        Address: 123 Career Street, Innovation Hub, Tech City, CA 94000, United States
+      </p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer reveal">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>JobHunt</h2>
+        <p>Unlocking career potential for every dreamer out there.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="internship.html">Internships</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="competitions.html">Competitions</a></li>
+            <li><a href="practice.html">Practice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="img/linkedin.png" alt="LinkedIn"></a>
+          <a href="#"><img src="img/X.png" alt="Twitter/X Icon"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 JobHunt. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+
+      hamburger.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

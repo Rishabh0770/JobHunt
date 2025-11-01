@@ -40,42 +40,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Notification & Inbox Badge Count
 // ================================
 let notificationCount = 3;
-let inboxCount = 5;
-
-const notificationBadge = document.querySelector('.nav-icons .icon:nth-child(1) .badge');
-const inboxBadge = document.querySelector('.nav-icons .icon:nth-child(2) .badge');
+let inboxCount = 2;
 
 function updateBadges() {
-  if (notificationCount > 0) {
-    notificationBadge.textContent = notificationCount;
-    notificationBadge.style.display = "inline-block";
-  } else {
-    notificationBadge.style.display = "none";
+  const notificationBadge = document.querySelector('.nav-icons .icon:nth-child(1) .badge');
+  const inboxBadge = document.querySelector('.nav-icons .icon:nth-child(2) .badge');
+
+  if (notificationBadge) {
+    if (notificationCount > 0) {
+      notificationBadge.textContent = notificationCount;
+      notificationBadge.style.display = "inline-block";
+    } else {
+      notificationBadge.style.display = "none";
+    }
   }
 
-  if (inboxCount > 0) {
-    inboxBadge.textContent = inboxCount;
-    inboxBadge.style.display = "inline-block";
-  } else {
-    inboxBadge.style.display = "none";
+  if (inboxBadge) {
+    if (inboxCount > 0) {
+      inboxBadge.textContent = inboxCount;
+      inboxBadge.style.display = "inline-block";
+    } else {
+      inboxBadge.style.display = "none";
+    }
   }
 }
 
-updateBadges();
-
-setInterval(() => {
-  notificationCount++;
+// Initialize badges on page load
+document.addEventListener('DOMContentLoaded', function() {
   updateBadges();
-}, 10000);
-
-fetch('/api/notifications')
-  .then(res => res.json())
-  .then(data => {
-    notificationCount = data.notifications;
-    inboxCount = data.inbox;
-    updateBadges();
-  })
-  .catch(err => console.error("Failed to load notifications:", err));
+});
 
 // Profile Toggle
 const profileToggle = document.getElementById("profileToggle");
@@ -251,14 +244,242 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (logoutBtn) {
     logoutBtn.addEventListener("click", function () {
-      // Clear local storage or session data
-      localStorage.clear();
+      const confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        // Clear local storage or session data
+        localStorage.clear();
+        sessionStorage.clear();
 
-      // Optional: show confirmation
-      alert("You have been logged out.");
+        // Show success message
+        alert("You have been logged out successfully.");
 
-      // Redirect to homepage or login page
-      window.location.href = "index.html"; // Change as per your site structure
+        // Redirect to homepage or login page
+        window.location.href = "index.html";
+      }
     });
   }
 });
+
+// ================================
+// Activity Section Button Handlers
+// ================================
+document.addEventListener('DOMContentLoaded', function() {
+  const activityButtons = document.querySelectorAll('.activity-buttons button');
+  
+  activityButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const buttonText = this.textContent.trim();
+      
+      // Add visual feedback
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = '';
+      }, 150);
+      
+      // Route to appropriate pages
+      switch(buttonText) {
+        case 'Registrations':
+          window.location.href = 'profile/registration.html';
+          break;
+        case 'Watchlist':
+          window.location.href = 'profile/watchlist.html';
+          break;
+        case 'Recently Viewed':
+          window.location.href = 'profile/recently-viewed.html';
+          break;
+        case 'My Rounds':
+          // Show coming soon for unimplemented features
+          showToast('My Rounds feature coming soon!');
+          break;
+        default:
+          console.log('Button clicked:', buttonText);
+      }
+    });
+  });
+});
+
+// ================================
+// Toast Notification System
+// ================================
+function showToast(message, duration = 3000) {
+  // Create toast element if it doesn't exist
+  let toast = document.querySelector('.toast-notification');
+  
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'toast-notification';
+    document.body.appendChild(toast);
+    
+    // Add toast styles
+    const style = document.createElement('style');
+    style.textContent = `
+      .toast-notification {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: linear-gradient(135deg, #2d9cdb, #1c7bbf);
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        z-index: 10000;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        font-weight: 500;
+        max-width: 300px;
+      }
+      
+      .toast-notification.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      @media (max-width: 768px) {
+        .toast-notification {
+          bottom: 20px;
+          right: 20px;
+          left: 20px;
+          max-width: none;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+  
+  toast.textContent = message;
+  toast.classList.add('show');
+  
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, duration);
+}
+
+// ================================
+// Search Form Enhancement
+// ================================
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForms = document.querySelectorAll('.search-form');
+  
+  searchForms.forEach(form => {
+    form.addEventListener('submit', function(e) {
+      const searchInput = this.querySelector('.search-input');
+      if (searchInput && searchInput.value.trim() === '') {
+        e.preventDefault();
+        showToast('Please enter a search term');
+        searchInput.focus();
+      }
+    });
+  });
+});
+
+// ================================
+// Scroll to Top Button
+// ================================
+document.addEventListener('DOMContentLoaded', function() {
+  // Create scroll to top button
+  const scrollBtn = document.createElement('button');
+  scrollBtn.className = 'scroll-to-top';
+  scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+  scrollBtn.setAttribute('aria-label', 'Scroll to top');
+  document.body.appendChild(scrollBtn);
+
+  // Show/hide button based on scroll position
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+
+  // Scroll to top when clicked
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+
+// ================================
+// Performance Optimization - Lazy Loading
+// ================================
+document.addEventListener('DOMContentLoaded', function() {
+  // Add lazy loading to images
+  const images = document.querySelectorAll('img[data-src]');
+  
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  images.forEach(img => imageObserver.observe(img));
+});
+
+// ================================
+// Keyboard Navigation Enhancement
+// ================================
+document.addEventListener('DOMContentLoaded', function() {
+  // Allow ESC key to close modals
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeNotification();
+      closeMessages();
+      closeProfilePanel();
+    }
+  });
+
+  // Trap focus in modals when open
+  const trapFocus = (element) => {
+    const focusableElements = element.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    element.addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusable) {
+            lastFocusable.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastFocusable) {
+            firstFocusable.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    });
+  };
+
+  // Apply focus trap to sidebars when they open
+  const notificationSidebar = document.getElementById('notificationSidebar');
+  const messagesSidebar = document.getElementById('messagesSidebar');
+  const profilePanel = document.getElementById('profilePanel');
+
+  if (notificationSidebar) trapFocus(notificationSidebar);
+  if (messagesSidebar) trapFocus(messagesSidebar);
+  if (profilePanel) trapFocus(profilePanel);
+});
+
+// ================================
+// Performance Monitoring
+// ================================
+if ('performance' in window) {
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      const perfData = performance.timing;
+      const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+      console.log('Page load time: ' + pageLoadTime + 'ms');
+    }, 0);
+  });
+}

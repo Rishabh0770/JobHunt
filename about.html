@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Learn about JobHunt - Your trusted career platform connecting talent with opportunity.">
+  <title>About Us - JobHunt</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .about-hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, rgba(45, 156, 219, 0.1), rgba(249, 193, 0, 0.1));
+      border-radius: 20px;
+      margin: 20px 0;
+    }
+
+    .about-hero h1 {
+      font-size: 48px;
+      color: #2d3436;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #2d9cdb, #f9c100);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .about-hero p {
+      font-size: 20px;
+      color: #636e72;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .about-content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .about-section {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .about-section h2 {
+      font-size: 32px;
+      color: #2d9cdb;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .about-section h2 i {
+      font-size: 28px;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #2d9cdb, #1c7bbf);
+      color: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(45, 156, 219, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-card h3 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .stat-card p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .value-card {
+      padding: 25px;
+      background: rgba(249, 193, 0, 0.1);
+      border-left: 4px solid #f9c100;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .value-card:hover {
+      background: rgba(249, 193, 0, 0.15);
+      transform: translateX(5px);
+    }
+
+    .value-card h3 {
+      font-size: 22px;
+      color: #2d3436;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .value-card p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .about-hero h1 {
+        font-size: 32px;
+      }
+
+      .about-hero p {
+        font-size: 16px;
+      }
+
+      .about-section {
+        padding: 25px;
+      }
+
+      .about-section h2 {
+        font-size: 24px;
+      }
+
+      .stat-card h3 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="navbar">
+    <a href="index.html" class="logo">JobHunt</a>
+    
+    <form class="search-form" action="search.html" method="GET">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" name="query" placeholder="Search Opportunities..." class="search-input" />
+      </div>
+    </form>
+
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="nav-links">
+        <li><a href="internship.html">Internships</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="mentorships.html">Mentorships</a></li>
+        <li><a href="practice.html">Practice</a></li>
+        <li><a href="more.html">More</a></li>
+      </ul>
+    </nav>
+
+    <div class="btn-business">For Business</div>
+
+    <div class="nav-icons">
+      <a href="#" class="icon" title="Notifications" onclick="openNotification()">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </a>
+      <a href="#" class="icon" title="Messages" onclick="openMessages()">
+        <i class="fas fa-envelope"></i>
+        <span class="badge">2</span>
+      </a>
+      <a href="#" id="profileToggle" class="profile-img" title="Profile">
+        <img src="img/profile.png" alt="Profile" />
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Hero Section -->
+    <section class="about-hero reveal">
+      <h1>About JobHunt</h1>
+      <p>Empowering careers, connecting talent with opportunities worldwide</p>
+    </section>
+
+    <!-- About Content -->
+    <div class="about-content">
+      <!-- Mission Section -->
+      <section class="about-section reveal">
+        <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+        <p>
+          At JobHunt, we're on a mission to democratize career opportunities for everyone. 
+          We believe that talent is universal, but opportunity is not. That's why we've created 
+          a platform that connects job seekers, students, and professionals with internships, 
+          jobs, competitions, and mentorships from across the globe.
+        </p>
+        <p>
+          Our goal is to help you unlock your career potential by providing access to opportunities 
+          that match your skills, interests, and aspirations. Whether you're just starting out or 
+          looking to advance your career, JobHunt is your trusted partner in professional growth.
+        </p>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="about-section reveal">
+        <h2><i class="fas fa-chart-line"></i> Our Impact</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>50K+</h3>
+            <p>Active Users</p>
+          </div>
+          <div class="stat-card">
+            <h3>10K+</h3>
+            <p>Opportunities Posted</p>
+          </div>
+          <div class="stat-card">
+            <h3>500+</h3>
+            <p>Partner Companies</p>
+          </div>
+          <div class="stat-card">
+            <h3>95%</h3>
+            <p>Success Rate</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values Section -->
+      <section class="about-section reveal">
+        <h2><i class="fas fa-heart"></i> Our Core Values</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <h3><i class="fas fa-users"></i> Inclusivity</h3>
+            <p>We believe in equal opportunities for everyone, regardless of background or experience.</p>
+          </div>
+          <div class="value-card">
+            <h3><i class="fas fa-lightbulb"></i> Innovation</h3>
+            <p>We constantly evolve our platform to meet the changing needs of the job market.</p>
+          </div>
+          <div class="value-card">
+            <h3><i class="fas fa-shield-alt"></i> Trust</h3>
+            <p>We maintain transparency and integrity in all our interactions and services.</p>
+          </div>
+          <div class="value-card">
+            <h3><i class="fas fa-rocket"></i> Growth</h3>
+            <p>We're committed to your continuous learning and professional development.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story Section -->
+      <section class="about-section reveal">
+        <h2><i class="fas fa-book"></i> Our Story</h2>
+        <p>
+          JobHunt was founded in 2024 with a simple yet powerful vision: to make career 
+          opportunities accessible to everyone. What started as a small platform for college 
+          students has grown into a comprehensive career ecosystem serving professionals at 
+          all stages of their journey.
+        </p>
+        <p>
+          Today, we partner with leading companies across industries to bring you curated 
+          opportunities that align with your career goals. Our platform has helped thousands 
+          of individuals land their dream jobs, build valuable skills, and connect with mentors 
+          who guide their career paths.
+        </p>
+        <p>
+          As we continue to grow, our commitment remains the same: to be your trusted partner 
+          in unlocking your career potential and achieving your professional dreams.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer reveal">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>JobHunt</h2>
+        <p>Unlocking career potential for every dreamer out there.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="internship.html">Internships</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="competitions.html">Competitions</a></li>
+            <li><a href="practice.html">Practice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="img/linkedin.png" alt="LinkedIn"></a>
+          <a href="#"><img src="img/X.png" alt="Twitter/X Icon"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 JobHunt. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+
+      hamburger.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

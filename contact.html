@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Get in touch with JobHunt team. We're here to help you with your career journey.">
+  <title>Contact Us - JobHunt</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .contact-hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, rgba(45, 156, 219, 0.1), rgba(249, 193, 0, 0.1));
+      border-radius: 20px;
+      margin: 20px 0;
+    }
+
+    .contact-hero h1 {
+      font-size: 48px;
+      color: #2d3436;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #2d9cdb, #f9c100);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .contact-hero p {
+      font-size: 18px;
+      color: #636e72;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-form-section {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-form-section h2 {
+      font-size: 28px;
+      color: #2d9cdb;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #2d3436;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #2d9cdb;
+      box-shadow: 0 0 0 3px rgba(45, 156, 219, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #2d9cdb, #1c7bbf);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(45, 156, 219, 0.3);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(45, 156, 219, 0.4);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .contact-info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-card h3 {
+      font-size: 22px;
+      color: #2d9cdb;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .info-card h3 i {
+      font-size: 24px;
+    }
+
+    .info-card p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .info-card a {
+      color: #2d9cdb;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .info-card a:hover {
+      color: #1c7bbf;
+      text-decoration: underline;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #2d9cdb, #1c7bbf);
+      color: white;
+      border-radius: 50%;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(45, 156, 219, 0.3);
+    }
+
+    @media (max-width: 968px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-hero h1 {
+        font-size: 32px;
+      }
+
+      .contact-hero p {
+        font-size: 16px;
+      }
+
+      .contact-form-section,
+      .info-card {
+        padding: 25px;
+      }
+
+      .contact-form-section h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="navbar">
+    <a href="index.html" class="logo">JobHunt</a>
+    
+    <form class="search-form" action="search.html" method="GET">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" name="query" placeholder="Search Opportunities..." class="search-input" />
+      </div>
+    </form>
+
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="nav-links">
+        <li><a href="internship.html">Internships</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="mentorships.html">Mentorships</a></li>
+        <li><a href="practice.html">Practice</a></li>
+        <li><a href="more.html">More</a></li>
+      </ul>
+    </nav>
+
+    <div class="btn-business">For Business</div>
+
+    <div class="nav-icons">
+      <a href="#" class="icon" title="Notifications" onclick="openNotification()">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </a>
+      <a href="#" class="icon" title="Messages" onclick="openMessages()">
+        <i class="fas fa-envelope"></i>
+        <span class="badge">2</span>
+      </a>
+      <a href="#" id="profileToggle" class="profile-img" title="Profile">
+        <img src="img/profile.png" alt="Profile" />
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Hero Section -->
+    <section class="contact-hero reveal">
+      <h1>Get In Touch</h1>
+      <p>Have a question or feedback? We'd love to hear from you. Fill out the form below or reach us through our contact information.</p>
+    </section>
+
+    <!-- Contact Container -->
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <div class="contact-form-section reveal">
+        <h2>Send us a Message</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="general">General Inquiry</option>
+              <option value="support">Technical Support</option>
+              <option value="partnership">Partnership Opportunity</option>
+              <option value="feedback">Feedback</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info-section">
+        <div class="info-card reveal">
+          <h3><i class="fas fa-envelope"></i> Email Us</h3>
+          <p>For general inquiries:</p>
+          <a href="mailto:info@jobhunt.com">info@jobhunt.com</a>
+          <p style="margin-top: 15px;">For support:</p>
+          <a href="mailto:support@jobhunt.com">support@jobhunt.com</a>
+        </div>
+
+        <div class="info-card reveal">
+          <h3><i class="fas fa-phone"></i> Call Us</h3>
+          <p>Customer Support:</p>
+          <a href="tel:+1234567890">+1 (234) 567-890</a>
+          <p style="margin-top: 15px;">Business Inquiries:</p>
+          <a href="tel:+1234567891">+1 (234) 567-891</a>
+        </div>
+
+        <div class="info-card reveal">
+          <h3><i class="fas fa-map-marker-alt"></i> Visit Us</h3>
+          <p>JobHunt Headquarters<br>
+          123 Career Street<br>
+          Innovation Hub, Tech City<br>
+          CA 94000, United States</p>
+        </div>
+
+        <div class="info-card reveal">
+          <h3><i class="fas fa-share-alt"></i> Follow Us</h3>
+          <p>Stay connected with us on social media:</p>
+          <div class="social-links">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer reveal">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>JobHunt</h2>
+        <p>Unlocking career potential for every dreamer out there.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="internship.html">Internships</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="competitions.html">Competitions</a></li>
+            <li><a href="practice.html">Practice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="img/linkedin.png" alt="LinkedIn"></a>
+          <a href="#"><img src="img/X.png" alt="Twitter/X Icon"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 JobHunt. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+
+      hamburger.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+      });
+
+      // Contact Form Submission
+      const contactForm = document.getElementById('contactForm');
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          subject: document.getElementById('subject').value,
+          message: document.getElementById('message').value
+        };
+
+        // Simulate form submission
+        console.log('Form submitted:', formData);
+        
+        // Show success message
+        alert('Thank you for contacting us! We will get back to you within 24 hours.');
+        
+        // Reset form
+        contactForm.reset();
+      });
+    });
+  </script>
+</body>
+</html>

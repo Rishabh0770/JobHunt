@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="Join the JobHunt team! Explore career opportunities and be part of our mission.">
+  <title>Careers - JobHunt</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .careers-hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(135deg, rgba(45, 156, 219, 0.1), rgba(249, 193, 0, 0.1));
+      border-radius: 20px;
+      margin: 20px 0;
+    }
+
+    .careers-hero h1 {
+      font-size: 48px;
+      color: #2d3436;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #2d9cdb, #f9c100);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .careers-hero p {
+      font-size: 20px;
+      color: #636e72;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+
+    .perks-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .perk-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .perk-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .perk-card i {
+      font-size: 42px;
+      color: #2d9cdb;
+      margin-bottom: 15px;
+    }
+
+    .perk-card h3 {
+      font-size: 20px;
+      color: #2d3436;
+      margin-bottom: 10px;
+    }
+
+    .perk-card p {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .jobs-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      color: #2d3436;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .job-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border-left: 4px solid #2d9cdb;
+    }
+
+    .job-card:hover {
+      transform: translateX(5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .job-title {
+      font-size: 24px;
+      color: #2d3436;
+      margin-bottom: 5px;
+    }
+
+    .job-meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .job-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .job-meta i {
+      color: #2d9cdb;
+    }
+
+    .job-description {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .apply-btn {
+      padding: 10px 24px;
+      background: linear-gradient(135deg, #2d9cdb, #1c7bbf);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(45, 156, 219, 0.2);
+    }
+
+    .apply-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(45, 156, 219, 0.3);
+    }
+
+    .no-openings {
+      text-align: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 16px;
+      color: #666;
+    }
+
+    .no-openings i {
+      font-size: 48px;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .careers-hero h1 {
+        font-size: 32px;
+      }
+
+      .careers-hero p {
+        font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .job-header {
+        flex-direction: column;
+      }
+
+      .job-title {
+        font-size: 20px;
+      }
+
+      .perk-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="navbar">
+    <a href="index.html" class="logo">JobHunt</a>
+    
+    <form class="search-form" action="search.html" method="GET">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" name="query" placeholder="Search Opportunities..." class="search-input" />
+      </div>
+    </form>
+
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="navMenu">
+      <ul class="nav-links">
+        <li><a href="internship.html">Internships</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="mentorships.html">Mentorships</a></li>
+        <li><a href="practice.html">Practice</a></li>
+        <li><a href="more.html">More</a></li>
+      </ul>
+    </nav>
+
+    <div class="btn-business">For Business</div>
+
+    <div class="nav-icons">
+      <a href="#" class="icon" title="Notifications" onclick="openNotification()">
+        <i class="fas fa-bell"></i>
+        <span class="badge">3</span>
+      </a>
+      <a href="#" class="icon" title="Messages" onclick="openMessages()">
+        <i class="fas fa-envelope"></i>
+        <span class="badge">2</span>
+      </a>
+      <a href="#" id="profileToggle" class="profile-img" title="Profile">
+        <img src="img/profile.png" alt="Profile" />
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Hero Section -->
+    <section class="careers-hero reveal">
+      <h1>Join Our Team</h1>
+      <p>Help us build the future of career opportunities. We're looking for passionate, talented individuals to join our mission of connecting people with their dream careers.</p>
+    </section>
+
+    <!-- Perks Section -->
+    <section class="perks-section">
+      <h2 class="section-title reveal">Why Work With Us?</h2>
+      <div class="perks-grid">
+        <div class="perk-card reveal">
+          <i class="fas fa-laptop-house"></i>
+          <h3>Remote Flexibility</h3>
+          <p>Work from anywhere with flexible hours that fit your lifestyle.</p>
+        </div>
+
+        <div class="perk-card reveal">
+          <i class="fas fa-heart"></i>
+          <h3>Health & Wellness</h3>
+          <p>Comprehensive health insurance and wellness programs for you and your family.</p>
+        </div>
+
+        <div class="perk-card reveal">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Learning & Growth</h3>
+          <p>Continuous learning opportunities with courses, conferences, and workshops.</p>
+        </div>
+
+        <div class="perk-card reveal">
+          <i class="fas fa-users"></i>
+          <h3>Great Culture</h3>
+          <p>Collaborative environment with talented people who love what they do.</p>
+        </div>
+
+        <div class="perk-card reveal">
+          <i class="fas fa-chart-line"></i>
+          <h3>Career Development</h3>
+          <p>Clear growth paths with mentorship and advancement opportunities.</p>
+        </div>
+
+        <div class="perk-card reveal">
+          <i class="fas fa-gift"></i>
+          <h3>Competitive Benefits</h3>
+          <p>Attractive salary, stock options, and performance bonuses.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Job Openings Section -->
+    <section class="jobs-section">
+      <h2 class="section-title reveal">Current Openings</h2>
+
+      <!-- Job 1 -->
+      <div class="job-card reveal">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">Senior Full Stack Developer</h3>
+            <div class="job-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+              <span><i class="fas fa-briefcase"></i> Full-time</span>
+              <span><i class="fas fa-clock"></i> Experience: 5+ years</span>
+            </div>
+          </div>
+          <button class="apply-btn" onclick="applyForJob('Senior Full Stack Developer')">Apply Now</button>
+        </div>
+        <p class="job-description">
+          We're looking for an experienced Full Stack Developer to help build and scale our platform. 
+          You'll work with React, Node.js, and cloud technologies to create amazing user experiences.
+        </p>
+      </div>
+
+      <!-- Job 2 -->
+      <div class="job-card reveal">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">Product Designer</h3>
+            <div class="job-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Remote / Hybrid</span>
+              <span><i class="fas fa-briefcase"></i> Full-time</span>
+              <span><i class="fas fa-clock"></i> Experience: 3+ years</span>
+            </div>
+          </div>
+          <button class="apply-btn" onclick="applyForJob('Product Designer')">Apply Now</button>
+        </div>
+        <p class="job-description">
+          Join our design team to create intuitive, beautiful interfaces that help millions find their dream careers. 
+          Experience with Figma and design systems is a plus.
+        </p>
+      </div>
+
+      <!-- Job 3 -->
+      <div class="job-card reveal">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">Marketing Manager</h3>
+            <div class="job-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+              <span><i class="fas fa-briefcase"></i> Full-time</span>
+              <span><i class="fas fa-clock"></i> Experience: 4+ years</span>
+            </div>
+          </div>
+          <button class="apply-btn" onclick="applyForJob('Marketing Manager')">Apply Now</button>
+        </div>
+        <p class="job-description">
+          Lead our marketing efforts to reach more job seekers and employers. You'll develop strategies, 
+          manage campaigns, and grow our brand presence across channels.
+        </p>
+      </div>
+
+      <!-- Job 4 -->
+      <div class="job-card reveal">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">Customer Success Specialist</h3>
+            <div class="job-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+              <span><i class="fas fa-briefcase"></i> Full-time</span>
+              <span><i class="fas fa-clock"></i> Experience: 2+ years</span>
+            </div>
+          </div>
+          <button class="apply-btn" onclick="applyForJob('Customer Success Specialist')">Apply Now</button>
+        </div>
+        <p class="job-description">
+          Help our users succeed by providing exceptional support and guidance. You'll be the voice of 
+          our customers and help shape our product roadmap.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer reveal">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>JobHunt</h2>
+        <p>Unlocking career potential for every dreamer out there.</p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="internship.html">Internships</a></li>
+            <li><a href="jobs.html">Jobs</a></li>
+            <li><a href="competitions.html">Competitions</a></li>
+            <li><a href="practice.html">Practice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="social-icons">
+          <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="img/linkedin.png" alt="LinkedIn"></a>
+          <a href="#"><img src="img/X.png" alt="Twitter/X Icon"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 JobHunt. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+
+      hamburger.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+      });
+    });
+
+    function applyForJob(jobTitle) {
+      alert(`Thank you for your interest in the ${jobTitle} position! Please send your resume and cover letter to careers@jobhunt.com with the job title in the subject line.`);
+    }
+  </script>
+</body>
+</html>
